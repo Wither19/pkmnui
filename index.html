@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Online HTML Editor</title>
+<title>Pokemon UI Mockup</title>
 <head>
   <style>
     pkmn {
@@ -20,17 +20,63 @@
     }
     pkmn:hover {
       transform: translate(0px, -4px);
-      filter: drop-shadow(0px 5px 6px);
+      filter: drop-shadow(0px 5px 6px gray);
     }
     pkmn:active {
       transform: translate(0px, 2px);
-      filter: drop-shadow(0px 5px 6px);
+      filter: drop-shadow(0px 5px 6px gray);
       background: rgba(255, 255, 0, 0.8);
+      color: white;
     }
     pkmn span {
       font-size: 1.6rem;
       position: relative;
       top: 35%;
+    }
+    pkmn[type="normal"]:active {
+      background: lightgray;
+    }
+    pkmn[type="grass"]:active {
+      background: lime;
+    }
+    pkmn[type="fire"]:active {
+      background: orange;
+    }
+    pkmn[type="water"]:active {
+      background: dodgerblue;
+    }
+    pkmn[type="electric"]:active {
+      background: gold;
+    }
+    pkmn[type="ground"]:active {
+      background: khaki;
+    }
+    pkmn[type="rock"]:active {
+      background: darkkhaki;
+    }
+    pkmn[type="bug"]:active {
+      background: yellowgreen;
+    }
+    pkmn[type="psychic"]:active {
+      background: deeppink;
+    }
+    pkmn[type="fighting"]:active {
+      background: maroon;
+    }
+    pkmn[type="flying"]:active {
+      background: lightskyblue;
+    }
+    pkmn[type="dragon"]:active {
+      background: blueviolet;
+    }
+    pkmn[type="steel"]:active {
+      background: silver;
+    }
+    pkmn[type="dark"]:active {
+      background: #211a26;
+    }
+    pkmn[type="fairy"]:active {
+      background: #f2ada6;
     }
     pkmn[type]::after {
       display: block;
@@ -43,6 +89,10 @@
       padding: 4px;
       font-size: 1rem;
       color: white;
+    }
+    pkmn[type]:active::after {
+      background: white;
+      color: black;
     }
     pkmn[type="normal"]::after {
       background: lightgray;
@@ -119,7 +169,6 @@
       background: #f2ada6;
       content: "FAIRY";
       border: 1px solid #f2ada6;
-
     }
   </style>
 </head>
