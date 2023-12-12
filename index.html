@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+  <style>
+    pkmn {
+      display: block;
+      background: #eeeeee;
+      width: 50%;
+      margin: 10px auto;
+      height: 100px;
+      border: blanchedalmond 5px solid;
+      border-radius: 16px;
+      font-family: helvetica;
+      filter: drop-shadow(0px 3px 6px);
+      transition: transform 80ms ease-out, filter 80ms ease-out;
+      user-select: none;
+      cursor: pointer;
+    }
+    pkmn:hover {
+      transform: translate(0px, -4px);
+      filter: drop-shadow(0px 5px 6px);
+    }
+    pkmn:active {
+      transform: translate(0px, 2px);
+      filter: drop-shadow(0px 5px 6px);
+      background: rgba(255, 255, 0, 0.8);
+    }
+    pkmn span {
+      font-size: 1.6rem;
+      position: relative;
+      top: 35%;
+      left: 30%;
+    }
+    pkmn[type="fighting"]::after {
+      display: block;
+      position: relative;
+      top: -25%;
+      left: 70%;
+      background: maroon;
+      content: "FIGHTING";
+      width: 25%;
+      text-align: center;
+      border: 1px solid maroon;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 1rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <pkmn type="fighting"><span>Brick Break</span></pkmn>
+</body>
+</html>
