@@ -7,7 +7,7 @@
       display: block;
       background: #eeeeee;
       width: 50%;
-      margin: 20px;
+      margin: 20px auto;
       height: 100px;
       text-align: center;
       border: blanchedalmond 5px solid;
@@ -49,6 +49,46 @@
       content: "NORMAL";
       border: 1px solid lightgray;
     }
+    pkmn[type="grass"]::after {
+      background: lime;
+      content: "GRASS";
+      border: 1px solid lime;
+    }
+    pkmn[type="fire"]::after {
+      background: orange;
+      content: "FIRE";
+      border: 1px solid orange;
+    }
+    pkmn[type="water"]::after {
+      background: dodgerblue;
+      content: "WATER";
+      border: 1px solid dodgerblue;
+    }
+    pkmn[type="electric"]::after {
+      background: gold;
+      content: "ELECTRIC";
+      border: 1px solid gold;
+    }
+    pkmn[type="ground"]::after {
+      background: khaki;
+      content: "GROUND";
+      border: 1px solid khaki;
+    }
+    pkmn[type="rock"]::after {
+      background: darkkhaki;
+      content: "ROCK";
+      border: 1px solid darkkhaki;
+    }
+    pkmn[type="bug"]::after {
+      background: yellowgreen;
+      content: "BUG";
+      border: 1px solid yellowgreen;
+    }
+    pkmn[type="psychic"]::after {
+      background: deeppink;
+      content: "PSYCHIC";
+      border: 1px solid deeppink;
+    }
     pkmn[type="fighting"]::after {
       background: maroon;
       content: "FIGHTING";
@@ -58,12 +98,46 @@
       background: lightskyblue;
       content: "FLYING";
       border: 1px solid lightskyblue;
+      filter: brightness(0.95);
+    }
+    pkmn[type="dragon"]::after {
+      background: blueviolet;
+      content: "DRAGON";
+      border: 1px solid blueviolet;
+    }
+    pkmn[type="steel"]::after {
+      background: silver;
+      content: "STEEL";
+      border: 1px solid silver;
+    }
+    pkmn[type="dark"]::after {
+      background: #211a26;
+      content: "DARK";
+      border: 1px solid #211a26;
+    }
+    pkmn[type="fairy"]::after {
+      background: #f2ada6;
+      content: "FAIRY";
+      border: 1px solid #f2ada6;
+
     }
   </style>
 </head>
 <body>
-  <pkmn type="fighting"><span>Brick Break</span></pkmn>
   <pkmn type="normal"><span>Tackle</span></pkmn>
+  <pkmn type="grass"><span>Vine Whip</span></pkmn>
+  <pkmn type="fire"><span>Flare Blitz</span></pkmn>
+  <pkmn type="water"><span>Hydro Pump</span></pkmn>
+  <pkmn type="electric"><span>Volt Tackle</span></pkmn>
+  <pkmn type="ground"><span>Earthquake</span></pkmn>
+  <pkmn type="rock"><span>Ancient Power</span></pkmn>
+  <pkmn type="bug"><span>Infestation</span></pkmn>
+  <pkmn type="psychic"><span>Extrasensory</span></pkmn>
+  <pkmn type="fighting"><span>Brick Break</span></pkmn>
   <pkmn type="flying"><span>Aerial Ace</span></pkmn>
+  <pkmn type="dragon"><span>Draco Meteor</span></pkmn>
+  <pkmn type="steel"><span>Tackle</span></pkmn>
+  <pkmn type="dark"><span>Dark Pulse</span></pkmn>
+  <pkmn type="fairy"><span>Dazzling Gleam</span></pkmn>
 </body>
 </html>
