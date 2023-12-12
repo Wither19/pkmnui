@@ -1,0 +1,192 @@
+    pkmn {
+      display: block;
+      background: #eeeeee;
+      width: 25%;
+      margin: 20px auto;
+      height: 100px;
+      text-align: center;
+      border: blanchedalmond 5px solid;
+      border-radius: 16px;
+      font-family: helvetica;
+      filter: drop-shadow(0px 3px 6px);
+      transition: transform 80ms ease-out, filter 80ms ease-out;
+      user-select: none;
+      cursor: pointer;
+    }
+    pkmn:hover {
+      transform: translate(0px, -4px);
+      filter: drop-shadow(0px 5px 6px gray);
+    }
+    pkmn:active {
+      transform: translate(0px, 2px);
+      filter: drop-shadow(0px 5px 6px gray);
+      background: rgba(255, 255, 0, 0.8);
+      color: white;
+    }
+    pkmn span {
+      font-size: 1.6rem;
+      position: relative;
+      top: 35%;
+    }
+    pkmn[type1][type2] span {
+      position: relative;
+      top: 20%;
+    }
+    pkmn[type1="normal"]:active, [type2="normal"]:active {
+      background: lightgray;
+    }
+    pkmn[type1="grass"]:active, [type2="grass"]:active {
+      background: lime;
+    }
+    pkmn[type1="fire"]:active, [type2="fire"]:active {
+      background: orange;
+    }
+    pkmn[type1="water"]:active, [type2="water"]:active {
+      background: dodgerblue;
+    }
+    pkmn[type1="electric"]:active, [type2="electric"]:active {
+      background: gold;
+    }
+    pkmn[type1="ground"]:active, [type2="ground"]:active {
+      background: khaki;
+    }
+    pkmn[type1="rock"]:active, [type2="rock"]:active {
+      background: darkkhaki;
+    }
+    pkmn[type1="bug"]:active, [type2="bug"]:active {
+      background: yellowgreen;
+    }
+    pkmn[type1="psychic"]:active, [type2="psychic"]:active {
+      background: deeppink;
+    }
+    pkmn[type1="fighting"]:active, [type2="fighting"]:active, [type2="fighting"]:active {
+      background: maroon;
+    }
+    pkmn[type1="flying"]:active, [type2="flying"]:active, pkmn[type2="flying"]:active {
+      background: lightskyblue;
+    }
+    pkmn[type1="dragon"]:active, [type2="dragon"]:active {
+      background: blueviolet;
+    }
+    pkmn[type1="steel"]:active, [type2="steel"]:active {
+      background: silver;
+    }
+    pkmn[type1="dark"]:active, [type2="dark"]:active {
+      background: #211a26;
+    }
+    pkmn[type1="fairy"]:active, [type2="fairy"]:active {
+      background: #f2ada6;
+    }
+    pkmn[type1]::after {
+      display: block;
+      position: relative;
+      top: -20%;
+      left: 70%;
+      width: 25%;
+      min-width: 25%;
+      max-width: 25%;
+      text-align: center;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 1rem;
+      color: white;
+    }
+    pkmn[type2]::before {
+      display: block;
+      position: relative;
+      top: 40%;
+      left: 70%;
+      width: 25%;
+      min-width: 25%;
+      max-width: 25%;
+      text-align: center;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 1rem;
+      color: white;
+    }
+    pkmn[type1][type2]::after {
+      position: relative;
+      top: -50%;
+      left: 70%;
+    }
+    pkmn[type1]:active::after, [type2]:active::before {
+      background: white;
+      color: black;
+    }
+    pkmn[type1="normal"]::after, [type2="normal"]::before {
+      background: lightgray;
+      content: "NORMAL";
+      border: 1px solid lightgray;
+    }
+    pkmn[type1="grass"]::after, [type2="grass"]::before {
+      background: lime;
+      content: "GRASS";
+      border: 1px solid lime;
+    }
+    pkmn[type1="fire"]::after, [type2="fire"]::before {
+      background: orange;
+      content: "FIRE";
+      border: 1px solid orange;
+    }
+    pkmn[type1="water"]::after, [type2="water"]::before {
+      background: dodgerblue;
+      content: "WATER";
+      border: 1px solid dodgerblue;
+    }
+    pkmn[type1="electric"]::after, [type2="electric"]::before {
+      background: gold;
+      content: "ELECTRIC";
+      border: 1px solid gold;
+    }
+    pkmn[type1="ground"]::after, [type2="ground"]::before {
+      background: khaki;
+      content: "GROUND";
+      border: 1px solid khaki;
+    }
+    pkmn[type1="rock"]::after, [type2="rock"]::before {
+      background: darkkhaki;
+      content: "ROCK";
+      border: 1px solid darkkhaki;
+    }
+    pkmn[type1="bug"]::after, [type2="bug"]::before {
+      background: yellowgreen;
+      content: "BUG";
+      border: 1px solid yellowgreen;
+    }
+    pkmn[type1="psychic"]::after, [type2="psychic"]::before {
+      background: deeppink;
+      content: "PSYCHIC";
+      border: 1px solid deeppink;
+    }
+    pkmn[type1="fighting"]::after, [type2="fighting"]::before {
+      background: maroon;
+      content: "FIGHTING";
+      border: 1px solid maroon;
+    }
+    pkmn[type1="flying"]::after, [type2="flying"]::before {
+      background: lightskyblue;
+      content: "FLYING";
+      border: 1px solid lightskyblue;
+      filter: brightness(0.95);
+    }
+    pkmn[type1="dragon"]::after, [type2="dragon"]::before {
+      background: blueviolet;
+      content: "DRAGON";
+      border: 1px solid blueviolet;
+    }
+    pkmn[type1="steel"]::after, [type2="steel"]::before {
+      background: silver;
+      content: "STEEL";
+      border: 1px solid silver;
+    }
+    pkmn[type1="dark"]::after, [type2="dark"]::before {
+      background: #211a26;
+      content: "DARK";
+      border: 1px solid #211a26;
+    }
+    pkmn[type1="fairy"]::after, [type2="fairy"]::before {
+      background: #f2ada6;
+      content: "FAIRY";
+      border: 1px solid #f2ada6;
+    }
