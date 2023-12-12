@@ -9,6 +9,7 @@
       width: 50%;
       margin: 10px auto;
       height: 100px;
+      text-align: center;
       border: blanchedalmond 5px solid;
       border-radius: 16px;
       font-family: helvetica;
@@ -30,26 +31,33 @@
       font-size: 1.6rem;
       position: relative;
       top: 35%;
-      left: 30%;
     }
-    pkmn[type="fighting"]::after {
+    pkmn[type]::after {
       display: block;
       position: relative;
       top: -25%;
       left: 70%;
-      background: maroon;
-      content: "FIGHTING";
       width: 25%;
       text-align: center;
-      border: 1px solid maroon;
       border-radius: 5px;
       padding: 4px;
       font-size: 1rem;
       color: white;
     }
+    pkmn[type="normal"]::after {
+      background: lightgray;
+      content: "NORMAL";
+      border: 1px solid lightgray;
+    }
+    pkmn[type="fighting"]::after {
+      background: maroon;
+      content: "FIGHTING";
+      border: 1px solid maroon;
+    }
   </style>
 </head>
 <body>
   <pkmn type="fighting"><span>Brick Break</span></pkmn>
+  <pkmn type="normal"><span>Tackle</span></pkmn>
 </body>
 </html>
