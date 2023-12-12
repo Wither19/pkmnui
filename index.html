@@ -7,7 +7,7 @@
       display: block;
       background: #eeeeee;
       width: 50%;
-      margin: 10px auto;
+      margin: 20px;
       height: 100px;
       text-align: center;
       border: blanchedalmond 5px solid;
@@ -54,10 +54,16 @@
       content: "FIGHTING";
       border: 1px solid maroon;
     }
+    pkmn[type="flying"]::after {
+      background: lightskyblue;
+      content: "FLYING";
+      border: 1px solid lightskyblue;
+    }
   </style>
 </head>
 <body>
   <pkmn type="fighting"><span>Brick Break</span></pkmn>
   <pkmn type="normal"><span>Tackle</span></pkmn>
+  <pkmn type="flying"><span>Aerial Ace</span></pkmn>
 </body>
 </html>
