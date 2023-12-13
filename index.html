@@ -46,7 +46,7 @@
       background: lightgray;
     }
     pkmn[type1="grass"]:active, [type2="grass"]:active {
-      background: lime;
+      background: #00d13f;
     }
     pkmn[type1="fire"]:active, [type2="fire"]:active {
       background: orange;
@@ -96,131 +96,134 @@
     pkmn[type1="fairy"]:active, [type2="fairy"]:active {
       background: #f2ada6;
     }
-    pkmn[type1]::after {
+    pkmn[type1]::before {
       display: block;
       position: relative;
-      top: -25%;
-      left: 65%;
-      width: 30%;
-      min-width: 30%;
-      max-width: 30%;
+      top: 5%;
+      left: 58%;
+      width: 35%;
+      min-width: 35%;
+      max-width: 35%;
       text-align: center;
       border-radius: 5px;
       padding: 4px;
       font-size: 1rem;
       color: white;
     }
-    pkmn[type2]::before {
+    pkmn[type2]::after {
       display: block;
       position: relative;
-      top: -25%;
-      left: 65%;
-      width: 30%;
-      min-width: 30%;
-      max-width: 30%;      
+      top: -27%;
+      left: 58%;
+      width: 35%;
+      min-width: 35%;
+      max-width: 35%;      
       text-align: center;
       border-radius: 5px;
       padding: 4px;
       font-size: 1rem;
       color: white;
     }
-    pkmn[type1][type2]::after {
+    pkmn[type1][type2]::before {
       position: relative;
-      top: -50%;
-      left: 70%;
+      top: 0%;
+      left: 58%;
     }
-    pkmn[type1]:active::after, [type2]:active::before {
+    pkmn[type2] span {
+        top: 30%;
+    }
+    pkmn[type1]:active::before, [type2]:active::after {
       background: white;
       color: black;
       text-shadow: 0px 2px 8px black;
     }
-    pkmn[type1="normal"]::after, [type2="normal"]::before {
+    pkmn[type1="normal"]::before, [type2="normal"]::after {
       background: lightgray;
       content: "NORMAL";
       border: 1px solid lightgray;
     }
-    pkmn[type1="grass"]::after, [type2="grass"]::before {
-      background: lime;
+    pkmn[type1="grass"]::before, [type2="grass"]::after {
+      background: #00d13f;
       content: "GRASS";
-      border: 1px solid lime;
+      border: 1px solid #00d13f;
     }
-    pkmn[type1="fire"]::after, [type2="fire"]::before {
+    pkmn[type1="fire"]::before, [type2="fire"]::after {
       background: orange;
       content: "FIRE";
       border: 1px solid orange;
     }
-    pkmn[type1="water"]::after, [type2="water"]::before {
+    pkmn[type1="water"]::before, [type2="water"]::after {
       background: dodgerblue;
       content: "WATER";
       border: 1px solid dodgerblue;
     }
-    pkmn[type1="electric"]::after, [type2="electric"]::before {
+    pkmn[type1="electric"]::before, [type2="electric"]::after {
       background: gold;
       content: "ELECTRIC";
       border: 1px solid gold;
     }
-    pkmn[type1="ground"]::after, [type2="ground"]::before {
+    pkmn[type1="ground"]::before, [type2="ground"]::after {
       background: khaki;
       content: "GROUND";
       border: 1px solid khaki;
     }
-    pkmn[type1="rock"]::after, [type2="rock"]::before {
+    pkmn[type1="rock"]::before, [type2="rock"]::after {
       background: darkkhaki;
       content: "ROCK";
       border: 1px solid darkkhaki;
     }
-    pkmn[type1="bug"]::after, [type2="bug"]::before {
+    pkmn[type1="bug"]::before, [type2="bug"]::after {
       background: yellowgreen;
       content: "BUG";
       border: 1px solid yellowgreen;
     }
-    pkmn[type1="psychic"]::after, [type2="psychic"]::before {
+    pkmn[type1="psychic"]::before, [type2="psychic"]::after {
       background: deeppink;
       content: "PSYCHIC";
       border: 1px solid deeppink;
     }
-    pkmn[type1="poison"]::after, [type2="poison"]::before {
+    pkmn[type1="poison"]::before, [type2="poison"]::after {
         background: rebeccapurple;
         content: "POISON";
         border: 1px solid rebeccapurple;
     }
-    pkmn[type1="ghost"]::after, [type2="ghost"]::before {
+    pkmn[type1="ghost"]::before, [type2="ghost"]::after {
         background: #635777;
         content: "GHOST";
         border: 1px solid #635777;
     }
-    pkmn[type1="fighting"]::after, [type2="fighting"]::before {
+    pkmn[type1="fighting"]::before, [type2="fighting"]::after {
         background: maroon;
         content: "FIGHTING";
         border: 1px solid maroon;
     }
-    pkmn[type1="flying"]::after, [type2="flying"]::before {
+    pkmn[type1="flying"]::before, [type2="flying"]::after {
       background: lightskyblue;
       content: "FLYING";
       border: 1px solid lightskyblue;
       filter: brightness(0.95);
     }
-    pkmn[type1="ice"]::after, [type2="ice"]::before {
+    pkmn[type1="ice"]::before, [type2="ice"]::after {
         background: #BCE6E6;
         content: "ICE";
         border: 1px solid #BCE6E6;
     }
-    pkmn[type1="dragon"]::after, [type2="dragon"]::before {
+    pkmn[type1="dragon"]::before, [type2="dragon"]::after {
       background: #6f53fc;
       content: "DRAGON";
       border: 1px solid #6f53fc;
     }
-    pkmn[type1="steel"]::after, [type2="steel"]::before {
+    pkmn[type1="steel"]::before, [type2="steel"]::after {
       background: silver;
       content: "STEEL";
       border: 1px solid silver;
     }
-    pkmn[type1="dark"]::after, [type2="dark"]::before {
+    pkmn[type1="dark"]::before, [type2="dark"]::after {
       background: #211a26;
       content: "DARK";
       border: 1px solid #211a26;
     }
-    pkmn[type1="fairy"]::after, [type2="fairy"]::before {
+    pkmn[type1="fairy"]::before, [type2="fairy"]::after {
       background: #f2ada6;
       content: "FAIRY";
       border: 1px solid #f2ada6;
@@ -232,65 +235,57 @@
     pkmn img {
       width: 120px;
       position: relative;
-      top: -50px;
+      top: -75px;
       left: -45%;
     }
     pkmn h1 {
       position: relative;
-      top: -115px;
+      top: -140px;
       left: -100px;
     }
-    pkmn:has(img)[type1]::after {
-      top: -170px;
+    pkmn:active h1 {
+        text-shadow: ;
     }
-    pkmn:has(img)[type2]::before {
-      top: 120px;
+    pkmn:has(img)[type1]::before {
+      top: 100px;
     }
-    @media screen and (orientation: portrait) {
-    pkmn {
-      display: block;
-      background: #eeeeee;
-      width: 60%;
-      height: 140px;
-      border-radius: 16px;
-      filter: drop-shadow(0px 3px 6px);
+    pkmn:has(img)[type2]::after {
+      top: -305px;
     }
-    pkmn span {
-      font-size: 3rem;
+    pkmn:has(img) sub {
+        display: block;
+        position: relative;
+        top: -160px;
+        left: -100px;
+        font-style: italic;
     }
-    pkmn[type1]::after {
-      display: block;
-      position: relative;
-      top: -40%;
-      left: 68%;
-      width: 30%;
-      min-width: 30%;
-      max-width: 30%;
-      text-align: center;
-      border-radius: 5px;
-      padding: 3px;
-      font-size: 1.8rem;
+    pkmn entry {
+        display: block;
+        font-style: italic;
+        background: lightgray;
+        width: 80%;
+        border: solid 8px blanchedalmond;
+        border-radius: 6px;
+        padding: 20px;
+        filter: drop-shadow(0px 3px 6px);
+        margin: 10px auto;
     }
-    pkmn[type2]::before {
-      display: block;
-      position: relative;
-      top: 40%;
-      left: 70%;
-      width: 25%;
-      min-width: 25%;
-      max-width: 25%;
-      text-align: center;
-      border-radius: 5px;
-      padding: 4px;
-      font-size: 1rem;
-      color: white;
+    entry[game]::after {
+        font-style: none;
+        font-weight: bold;
+        margin: 0px 20px;
+        position: relative;
+        top: -10px;
+        left: 47%;
     }
-    pkmn[type1][type2]::after {
-      position: relative;
-      top: -50%;
-      left: 70%;
+    entry[game="x"]::after {
+        content: "X";
+        color: #0077be;
+    } 
+    entry[game="y"]::after {
+        content: "Y";
+        color: maroon;
     }
-}
   </style>
 <style type="text/css" id="operaUserStyle">
   video {
@@ -316,8 +311,7 @@
   <pkmn type1="steel"><span>Gyro Ball</span></pkmn>
   <pkmn type1="dark"><span>Dark Pulse</span></pkmn>
   <pkmn type1="fairy"><span>Dazzling Gleam</span></pkmn>
-  <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/bulbasaur.png"><h1>#001 - Bulbasaur</h1></pkmn>
-
+  <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/bulbasaur.png"><h1>#001 - Bulbasaur</h1><sub>The Seed Pokemon</sub><entry game="x">'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.'</entry></pkmn>
 
 
 </body>
