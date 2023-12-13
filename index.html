@@ -249,9 +249,13 @@
     pkmn:has(img)[type1]::before {
       top: 100px;
     }
-    pkmn:has(img)[type2]::after {
-      top: -285px;
+    pkmn:has(img)[type1]:not([type2])::before {
+      top: 20px;
     }
+    pkmn:has(img)[type2]::after {
+      top: -305px !important;
+    }
+
     pkmn:has(img) sub {
         display: block;
         position: relative;
