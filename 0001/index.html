@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
   <style>
     body * {
       font-family: 'Afacad', sans-serif;
@@ -325,13 +326,28 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container 1">
   <pkmn type1="grass"><span>Vine Whip</span></pkmn>
   <pkmn type1="grass"><span>Solar Beam</span></pkmn>
   </div>
-  <div class="container">
+  <div class="container 2">
     <pkmn type1="dark"><span>Bite</span></pkmn>
   <pkmn type1="normal"><span>Tackle</span></pkmn>
   </div>
+  <h1 style="text-align: center;"></h1>
+  <script>
+    $(".1 pkmn:nth-child(1)").click(function(){
+      $("h1").html("Vine Whip");
+    });
+    $(".1 pkmn:nth-child(2)").click(function(){
+      $("h1").html("Solar Beam");
+    });
+    $(".2 pkmn:nth-child(1)").click(function(){
+      $("h1").html("Bite");
+    });
+    $(".2 pkmn:nth-child(2)").click(function(){
+      $("h1").html("Tackle");
+    });
+  </script>
 </body>
 </html>
