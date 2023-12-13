@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Pokemon UI Mockup</title>
+  <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    body * {
+      font-family: 'Afacad', sans-serif;
+    }
+    pkmn {
+      display: block;
+      background: #eeeeee;
+      width: 25%;
+      margin: 20px auto;
+      height: 100px;
+      text-align: center;
+      border: blanchedalmond 5px solid;
+      border-radius: 16px;
+      filter: drop-shadow(0px 3px 6px);
+      transition: transform 80ms ease-out, filter 80ms ease-out;
+      user-select: none;
+      cursor: pointer;
+    }
+    pkmn:hover {
+      transform: translate(0px, -4px);
+      filter: drop-shadow(0px 5px 6px gray);
+    }
+    pkmn:active {
+      transform: translate(0px, 2px);
+      filter: drop-shadow(0px 5px 6px gray);
+      background: rgba(255, 255, 0, 0.8);
+      color: white;
+    }
+    pkmn span {
+      font-size: 1.6rem;
+      position: relative;
+      top: 10%;
+    }
+    pkmn:active span, pkmn span:active {
+      text-shadow: 0px 2px 8px white;
+    }
+    pkmn[type1][type2] span {
+      position: relative;
+      top: 20%;
+    }
+    pkmn[type1="normal"]:active, [type2="normal"]:active {
+      background: lightgray;
+    }
+    pkmn[type1="grass"]:active, [type2="grass"]:active {
+      background: #00d13f;
+    }
+    pkmn[type1="fire"]:active, [type2="fire"]:active {
+      background: orange;
+    }
+    pkmn[type1="water"]:active, [type2="water"]:active {
+      background: dodgerblue;
+    }
+    pkmn[type1="electric"]:active, [type2="electric"]:active {
+      background: gold;
+    }
+    pkmn[type1="ground"]:active, [type2="ground"]:active {
+      background: khaki;
+    }
+    pkmn[type1="rock"]:active, [type2="rock"]:active {
+      background: darkkhaki;
+    }
+    pkmn[type1="bug"]:active, [type2="bug"]:active {
+      background: yellowgreen;
+    }
+    pkmn[type1="psychic"]:active, [type2="psychic"]:active {
+      background: deeppink;
+    }
+    pkmn[type1="poison"]:active, [type2="posion"]:active {
+      background: rebeccapurple;
+    }
+    pkmn[type1="ghost"]:active, [type2="ghost"]:active {
+      background: #635777;
+    }
+    pkmn[type1="fighting"]:active, [type2="fighting"]:active, [type2="fighting"]:active {
+      background: maroon;
+    }
+    pkmn[type1="flying"]:active, [type2="flying"]:active, pkmn[type2="flying"]:active {
+      background: lightskyblue;
+    }
+    pkmn[type1="ice"]:active, [type2="ice"]:active {
+      background: #BCE6E6;
+    }
+    pkmn[type1="dragon"]:active, [type2="dragon"]:active {
+      background: #6F35FC;
+    }
+    pkmn[type1="steel"]:active, [type2="steel"]:active {
+      background: silver;
+    }
+    pkmn[type1="dark"]:active, [type2="dark"]:active {
+      background: #211a26;
+    }
+    pkmn[type1="fairy"]:active, [type2="fairy"]:active {
+      background: #f2ada6;
+    }
+    pkmn[type1]::before {
+      display: block;
+      position: relative;
+      top: 5%;
+      left: 58%;
+      width: 35%;
+      min-width: 35%;
+      max-width: 35%;
+      text-align: center;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 1rem;
+      color: white;
+    }
+    pkmn[type2]::after {
+      display: block;
+      position: relative;
+      top: -27%;
+      left: 58%;
+      width: 35%;
+      min-width: 35%;
+      max-width: 35%;      
+      text-align: center;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 1rem;
+      color: white;
+    }
+    pkmn[type1][type2]::before {
+      position: relative;
+      top: 0% !important;
+      left: 58% !important;
+    }
+    pkmn[type2] span {
+        top: 30%;
+    }
+    pkmn[type1]:active::before, [type2]:active::after {
+      background: white;
+      color: black;
+      text-shadow: 0px 2px 8px black;
+    }
+    pkmn[type1="normal"]::before, [type2="normal"]::after {
+      background: lightgray;
+      content: "NORMAL";
+      border: 1px solid lightgray;
+    }
+    pkmn[type1="grass"]::before, [type2="grass"]::after {
+      background: #00d13f;
+      content: "GRASS";
+      border: 1px solid #00d13f;
+    }
+    pkmn[type1="fire"]::before, [type2="fire"]::after {
+      background: orange;
+      content: "FIRE";
+      border: 1px solid orange;
+    }
+    pkmn[type1="water"]::before, [type2="water"]::after {
+      background: dodgerblue;
+      content: "WATER";
+      border: 1px solid dodgerblue;
+    }
+    pkmn[type1="electric"]::before, [type2="electric"]::after {
+      background: gold;
+      content: "ELECTRIC";
+      border: 1px solid gold;
+    }
+    pkmn[type1="ground"]::before, [type2="ground"]::after {
+      background: khaki;
+      content: "GROUND";
+      border: 1px solid khaki;
+    }
+    pkmn[type1="rock"]::before, [type2="rock"]::after {
+      background: darkkhaki;
+      content: "ROCK";
+      border: 1px solid darkkhaki;
+    }
+    pkmn[type1="bug"]::before, [type2="bug"]::after {
+      background: yellowgreen;
+      content: "BUG";
+      border: 1px solid yellowgreen;
+    }
+    pkmn[type1="psychic"]::before, [type2="psychic"]::after {
+      background: deeppink;
+      content: "PSYCHIC";
+      border: 1px solid deeppink;
+    }
+    pkmn[type1="poison"]::before, [type2="poison"]::after {
+        background: rebeccapurple;
+        content: "POISON";
+        border: 1px solid rebeccapurple;
+    }
+    pkmn[type1="ghost"]::before, [type2="ghost"]::after {
+        background: #635777;
+        content: "GHOST";
+        border: 1px solid #635777;
+    }
+    pkmn[type1="fighting"]::before, [type2="fighting"]::after {
+        background: maroon;
+        content: "FIGHTING";
+        border: 1px solid maroon;
+    }
+    pkmn[type1="flying"]::before, [type2="flying"]::after {
+      background: lightskyblue;
+      content: "FLYING";
+      border: 1px solid lightskyblue;
+      filter: brightness(0.95);
+    }
+    pkmn[type1="ice"]::before, [type2="ice"]::after {
+        background: #BCE6E6;
+        content: "ICE";
+        border: 1px solid #BCE6E6;
+    }
+    pkmn[type1="dragon"]::before, [type2="dragon"]::after {
+      background: #6f53fc;
+      content: "DRAGON";
+      border: 1px solid #6f53fc;
+    }
+    pkmn[type1="steel"]::before, [type2="steel"]::after {
+      background: silver;
+      content: "STEEL";
+      border: 1px solid silver;
+    }
+    pkmn[type1="dark"]::before, [type2="dark"]::after {
+      background: #211a26;
+      content: "DARK";
+      border: 1px solid #211a26;
+    }
+    pkmn[type1="fairy"]::before, [type2="fairy"]::after {
+      background: #f2ada6;
+      content: "FAIRY";
+      border: 1px solid #f2ada6;
+    }
+    pkmn:has(img), pkmn:has(h1) {
+      width: 80%;
+      height: 80%;
+    }
+    pkmn img {
+      width: 120px;
+      position: relative;
+      top: -75px;
+      left: -40%;
+    }
+    pkmn img:nth-child(2) {
+      top: -25px;
+      left: -51%;
+    }
+    pkmn h1 {
+      position: relative;
+      top: -140px;
+      left: -100px;
+    }
+    pkmn:active h1 {
+        text-shadow: 0px 2px 8px white;
+    }
+    pkmn:has(img)[type1]::before {
+      top: 100px;
+    }
+    pkmn:has(img)[type1]:not([type2])::before {
+      top: 20px;
+    }
+    pkmn:has(img)[type2]::after {
+      top: -290px !important;
+    }
+
+    pkmn:has(img) sub {
+        display: block;
+        position: relative;
+        top: -160px;
+        left: -100px;
+        font-style: italic;
+    }
+    pkmn entry {
+        display: block;
+        font-style: italic;
+        background: lightgray;
+        width: 80%;
+        border: solid 8px blanchedalmond;
+        border-radius: 6px;
+        padding: 20px;
+        filter: drop-shadow(0px 3px 6px);
+        margin: 10px auto;
+    }
+    pkmn:active entry {
+        color: black;
+        text-shadow: none;
+    }
+    entry[game]::after {
+        font-style: none;
+        font-weight: bold;
+        margin: 0px 20px;
+        position: relative;
+        top: 0px;
+        left: 10%;
+    }
+    entry[game="x"]::after {
+        content: "X";
+        color: #0077be;
+    } 
+    entry[game="y"]::after {
+        content: "Y";
+        color: maroon;
+    }
+    button.moveset {
+      font-size: 24px;
+      color: white;
+      background: dodgerblue;
+      border: 6px solid dodgerblue;
+      border-radius: 12px;
+      margin: 20px 50%;
+      text-align: center;
+      font-weight: 700;
+    }
+    button.moveset a {
+      color: white;
+      text-decoration: none;
+    }
+    .container {
+      display: flex;
+    }
+    .container pkmn {
+      width: 40%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <pkmn type1="normal"><span>Pound</span></pkmn>
+  <pkmn type1="water"><span>Surf</span></pkmn>
+  </div>
+  <div class="container">
+    <pkmn type1="steel"><span>Iron Tail</span></pkmn>
+  <pkmn type1="rock"><span>Rollout</span></pkmn>
+  </div>
+</body>
+</html>
