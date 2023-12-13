@@ -225,6 +225,27 @@
       content: "FAIRY";
       border: 1px solid #f2ada6;
     }
+    pkmn:has(img), pkmn:has(h1) {
+      width: 80%;
+      height: 80%;
+    }
+    pkmn img {
+      width: 120px;
+      position: relative;
+      top: -50px;
+      left: -45%;
+    }
+    pkmn h1 {
+      position: relative;
+      top: -115px;
+      left: -100px;
+    }
+    pkmn:has(img)[type1]::after {
+      top: -170px;
+    }
+    pkmn:has(img)[type2]::before {
+      top: 120px;
+    }
     @media screen and (orientation: portrait) {
     pkmn {
       display: block;
@@ -290,10 +311,12 @@
   <pkmn type1="ghost"><span>Shadow Ball</span></pkmn>
   <pkmn type1="fighting"><span>Brick Break</span></pkmn>
   <pkmn type1="flying"><span>Aerial Ace</span></pkmn>
-  <pkmn type1="ice"><span>Sheer Cold</span></pkmn><pkmn type1="dragon"><span>Draco Meteor</span></pkmn>
+  <pkmn type1="ice"><span>Sheer Cold</span></pkmn>
+  <pkmn type1="dragon"><span>Draco Meteor</span></pkmn>
   <pkmn type1="steel"><span>Gyro Ball</span></pkmn>
   <pkmn type1="dark"><span>Dark Pulse</span></pkmn>
   <pkmn type1="fairy"><span>Dazzling Gleam</span></pkmn>
+  <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/bulbasaur.png"><h1>#001 - Bulbasaur</h1></pkmn>
 
 
 
