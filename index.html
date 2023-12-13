@@ -2,9 +2,14 @@
 <html>
 <head>
   <title>Pokemon UI Mockup</title>
-
   <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <style>
+    body * {
+      font-family: 'Afacad', sans-serif;
+    }
     pkmn {
       display: block;
       background: #eeeeee;
@@ -14,7 +19,6 @@
       text-align: center;
       border: blanchedalmond 5px solid;
       border-radius: 16px;
-      font-family: helvetica;
       filter: drop-shadow(0px 3px 6px);
       transition: transform 80ms ease-out, filter 80ms ease-out;
       user-select: none;
@@ -33,7 +37,7 @@
     pkmn span {
       font-size: 1.6rem;
       position: relative;
-      top: 35%;
+      top: 10%;
     }
     pkmn:active span, pkmn span:active {
       text-shadow: 0px 2px 8px white;
@@ -298,6 +302,20 @@
         content: "Y";
         color: maroon;
     }
+    button.moveset {
+      font-size: 24px;
+      color: white;
+      background: dodgerblue;
+      border: 6px solid dodgerblue;
+      border-radius: 12px;
+      margin: 20px 50%;
+      text-align: center;
+      font-weight: 700;
+    }
+    button.moveset a {
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -320,8 +338,12 @@
   <pkmn type1="dark"><span>Dark Pulse</span></pkmn>
   <pkmn type1="fairy"><span>Dazzling Gleam</span></pkmn>
   <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/bulbasaur.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/shiny/bulbasaur.png"><h1>#0001 - Bulbasaur</h1><sub>The Seed Pokemon</sub><entry game="x">'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.'</entry></pkmn>
+  <button class="moveset"><a href="https://wither19.github.io/pkmnui/0001">Preview</a></button>
   <pkmn type1="fire"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/charmander.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/shiny/charmander.png"><h1>#0004 - Charmander</h1><sub>The Lizard Pokemon</sub><entry game="x">'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.'</entry></pkmn>
+    <button class="moveset"><a href="https://wither19.github.io/pkmnui/0004">Preview</a></button>
     <pkmn type1="water"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/squirtle.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/shiny/squirtle.png"><h1>#0007 - Squirtle</h1><sub>The Turtle Pokemon</sub><entry game="x">'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.'</entry></pkmn>
+      <button class="moveset"><a href="https://wither19.github.io/pkmnui/0007">Preview</a></button>
     <pkmn type1="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/regular/nidoran-m.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen8/shiny/nidoran-m.png"><h1>#0032 - Nidoran♂</h1><sub>The Poison Pin Pokemon</sub><entry game="x">'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.'</entry></pkmn>
+      <button class="moveset"><a href="https://wither19.github.io/pkmnui/0032">Preview</a></button>
 </body>
 </html>
