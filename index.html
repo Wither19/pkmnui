@@ -1,473 +1,647 @@
-<html><head>
-  <title>Pokemon UI Mockup</title>
-  <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
-  <style>
-    body * {
-      font-family: 'Afacad', sans-serif;
-    }
-    pkmn {
-      display: block;
-      background: #eeeeee;
-      width: 25%;
-      margin: 20px auto;
-      height: 100px;
-      text-align: center;
-      border: blanchedalmond 5px solid;
-      border-radius: 16px;
-      filter: drop-shadow(0px 3px 6px);
-      transition: transform 80ms ease-out, filter 80ms ease-out;
-      user-select: none;
-      cursor: pointer;
-    }
-    pkmn:hover {
-      transform: translate(0px, -4px);
-      filter: drop-shadow(0px 5px 6px gray);
-    }
-    pkmn:active {
-      transform: translate(0px, 2px);
-      filter: drop-shadow(0px 5px 6px gray);
-      background: rgba(255, 255, 0, 0.8);
-      color: white;
-    }
-    pkmn span {
-      font-size: 1.6rem;
-      position: relative;
-      top: 10%;
-    }
-    pkmn:active span, pkmn span:active {
-      text-shadow: 0px 2px 8px white, 0px 3px 8px white;
-    }
-    pkmn[type1][type2] span {
-      position: relative;
-      top: 20%;
-    }
-    pkmn[type1="normal"]:active, [type2="normal"]:active {
-      background: lightgray;
-    }
-    pkmn[type1="grass"]:active, [type2="grass"]:active {
-      background: #00d13f;
-    }
-    pkmn[type1="fire"]:active, [type2="fire"]:active {
-      background: orange;
-    }
-    pkmn[type1="water"]:active, [type2="water"]:active {
-      background: dodgerblue;
-    }
-    pkmn[type1="electric"]:active, [type2="electric"]:active {
-      background: gold;
-    }
-    pkmn[type1="ground"]:active, [type2="ground"]:active {
-      background: khaki;
-    }
-    pkmn[type1="rock"]:active, [type2="rock"]:active {
-      background: darkkhaki;
-    }
-    pkmn[type1="bug"]:active, [type2="bug"]:active {
-      background: yellowgreen;
-    }
-    pkmn[type1="psychic"]:active, [type2="psychic"]:active {
-      background: deeppink;
-    }
-    pkmn[type1="poison"]:active, [type2="posion"]:active {
-      background: rebeccapurple;
-    }
-    pkmn[type1="ghost"]:active, [type2="ghost"]:active {
-      background: #635777;
-    }
-    pkmn[type1="fighting"]:active, [type2="fighting"]:active, [type2="fighting"]:active {
-      background: maroon;
-    }
-    pkmn[type1="flying"]:active, [type2="flying"]:active, pkmn[type2="flying"]:active {
-      background: lightskyblue;
-    }
-    pkmn[type1="ice"]:active, [type2="ice"]:active {
-      background: #BCE6E6;
-    }
-    pkmn[type1="dragon"]:active, [type2="dragon"]:active {
-      background: #6F35FC;
-    }
-    pkmn[type1="steel"]:active, [type2="steel"]:active {
-      background: silver;
-    }
-    pkmn[type1="dark"]:active, [type2="dark"]:active {
-      background: #211a26;
-    }
-    pkmn[type1="fairy"]:active, [type2="fairy"]:active {
-      background: #f2ada6;
-    }
-    pkmn[type1]::before {
-      display: block;
-      position: relative;
-      top: 5%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;
-      text-align: center;
-      border-radius: 5px;
-      padding: 4px;
-      font-size: 1rem;
-      color: white;
-    }
-    pkmn[type2]::after {
-      display: block;
-      position: relative;
-      top: -27%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;      
-      text-align: center;
-      border-radius: 5px;
-      padding: 4px;
-      font-size: 1rem;
-      color: white;
-    }
-    pkmn[type1][type2]::before {
-      position: relative;
-      top: 0% !important;
-      left: 58% !important;
-    }
-    pkmn[type2] span {
-        top: 30%;
-    }
-    pkmn[type1]:active::before, [type2]:active::after {
-      background: white;
-      color: black;
-      text-shadow: 0px 2px 8px black, 0px 3px 8px black;
-    }
-    pkmn[type1="normal"]::before, [type2="normal"]::after {
-      background: lightgray;
-      content: "NORMAL";
-      border: 1px solid lightgray;
-    }
-    pkmn[type1="grass"]::before, [type2="grass"]::after {
-      background: #00d13f;
-      content: "GRASS";
-      border: 1px solid #00d13f;
-    }
-    pkmn[type1="fire"]::before, [type2="fire"]::after {
-      background: orange;
-      content: "FIRE";
-      border: 1px solid orange;
-    }
-    pkmn[type1="water"]::before, [type2="water"]::after {
-      background: dodgerblue;
-      content: "WATER";
-      border: 1px solid dodgerblue;
-    }
-    pkmn[type1="electric"]::before, [type2="electric"]::after {
-      background: gold;
-      content: "ELECTRIC";
-      border: 1px solid gold;
-    }
-    pkmn[type1="ground"]::before, [type2="ground"]::after {
-      background: khaki;
-      content: "GROUND";
-      border: 1px solid khaki;
-    }
-    pkmn[type1="rock"]::before, [type2="rock"]::after {
-      background: darkkhaki;
-      content: "ROCK";
-      border: 1px solid darkkhaki;
-    }
-    pkmn[type1="bug"]::before, [type2="bug"]::after {
-      background: yellowgreen;
-      content: "BUG";
-      border: 1px solid yellowgreen;
-    }
-    pkmn[type1="psychic"]::before, [type2="psychic"]::after {
-      background: deeppink;
-      content: "PSYCHIC";
-      border: 1px solid deeppink;
-    }
-    pkmn[type1="poison"]::before, [type2="poison"]::after {
-        background: rebeccapurple;
-        content: "POISON";
-        border: 1px solid rebeccapurple;
-    }
-    pkmn[type1="ghost"]::before, [type2="ghost"]::after {
-        background: #635777;
-        content: "GHOST";
-        border: 1px solid #635777;
-    }
-    pkmn[type1="fighting"]::before, [type2="fighting"]::after {
-        background: maroon;
-        content: "FIGHTING";
-        border: 1px solid maroon;
-    }
-    pkmn[type1="flying"]::before, [type2="flying"]::after {
-      background: lightskyblue;
-      content: "FLYING";
-      border: 1px solid lightskyblue;
-      filter: brightness(0.95);
-    }
-    pkmn[type1="ice"]::before, [type2="ice"]::after {
-        background: #BCE6E6;
-        content: "ICE";
-        border: 1px solid #BCE6E6;
-    }
-    pkmn[type1="dragon"]::before, [type2="dragon"]::after {
-      background: #6f53fc;
-      content: "DRAGON";
-      border: 1px solid #6f53fc;
-    }
-    pkmn[type1="steel"]::before, [type2="steel"]::after {
-      background: silver;
-      content: "STEEL";
-      border: 1px solid silver;
-    }
-    pkmn[type1="dark"]::before, [type2="dark"]::after {
-      background: #211a26;
-      content: "DARK";
-      border: 1px solid #211a26;
-    }
-    pkmn[type1="fairy"]::before, [type2="fairy"]::after {
-      background: #f2ada6;
-      content: "FAIRY";
-      border: 1px solid #f2ada6;
-    }
-    pkmn:has(img), pkmn:has(h1) {
-      width: 80%;
-      height: 40%;
-    }
-    pkmn img {
-    width: 120px;
-    position: relative;
-    top: -75px;
-    left: -43.125%;
-    }
-    pkmn img:nth-child(2) {
-      top: -25px;
-      left: -51%;
-    }
-    pkmn h1 {
-      position: relative;
-      top: -140px;
-      left: -100px;
-    }
-    pkmn:active h1 {
-        text-shadow: 0px 2px 8px white, 0px 3px 8px white;
-    }
-    pkmn:has(img)[type1]::before {
-      top: 100px;
-    }
-    pkmn:has(img)[type1]:not([type2])::before {
-      top: 20px;
-    }
-    pkmn:has(img)[type2]::after {
-      top: -280px !important;
-    }
+<html>
 
-    pkmn:has(img) sub {
-        display: block;
-        position: relative;
-        top: -160px;
-        left: -100px;
-        font-style: italic;
-    }
-    pkmn entry {
-        display: block;
-        background: white;
-        width: 80%;
-        border: solid 1px blanchedalmond;
-        border-radius: 6px;
-        padding: 20px;
-        filter: drop-shadow(0px 3px 6px);
-        margin: 10px auto;
-    }
-    pkmn:active entry {
-        color: black;
-        text-shadow: none;
-    }
-    entry[game]::after {
-        font-style: none;
-        font-weight: bold;
-        margin: 0px 20px;
-        position: relative;
-        top: 0px;
-        left: 10%;
-    }
-    entry[game="x"]::after {
-        content: "X";
-        color: #0077be;
-    } 
-    entry[game="y"]::after {
-        content: "Y";
-        color: maroon;
-    }
-    button.moveset {
-      font-size: 24px;
-      color: white;
-      background: dodgerblue;
-      border: 6px solid dodgerblue;
-      border-radius: 12px;
-      margin: 20px 50%;
-      text-align: center;
-      font-weight: 700;
-    }
-    button.moveset a {
-      color: white;
-      text-decoration: none;
-    }
-    
-    
-    
-    @media screen and (orientation: portrait) {
-    pkmn {
-      width: 50%;
-      margin: 20px auto;
-      height: 200px;
-    }
-    pkmn span {
-      font-size: 4rem;
-      top: 10%;
-    }
-    pkmn[type1][type2] span {
-      top: 20%;
-      }
-    pkmn[type1]::before {
-      top: 5%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;
-      padding: 4px;
-      font-size: 2.5rem;
-    }
-    pkmn[type2]::after {
-      top: -27%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;
-      padding: 4px;
-      font-size: 2.5rem;
-    }
-    pkmn[type1][type2]::before {
-      position: relative;
-      top: 0% !important;
-      left: 58% !important;
-    }
-    pkmn[type2] span {
-        top: 30%;
-    }
-    pkmn:has(img), pkmn:has(h1) {
-      width: 80%;
-      height: 80%;
-    }
-    pkmn img {
-      width: 300px;
-      position: relative;
-      top: -75px;
-      left: -30%;
-    }
-    pkmn img:nth-child(2) {
-      top: -25px;
-      left: -30%;
-    }
-    pkmn h1 {
-      position: relative;
-      top: -140px;
-      left: -100px;
-    }
-    pkmn:has(img)[type1]::before {
-      top: 100px;
-    }
-    pkmn:has(img)[type1]:not([type2])::before {
-      top: 20px;
-    }
-    pkmn:has(img)[type2]::after {
-      top: -290px !important;
-    }
+<head>
+    <title>Pokemon UI Mockup</title>
+    <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+    <style>
+        body * {
+            font-family: 'Afacad', sans-serif;
+        }
 
-    pkmn:has(img) sub {
-        display: block;
-        position: relative;
-        top: -160px;
-        left: -100px;
-        font-style: italic;
-    }
-    pkmn entry {
-        width: 80%;
-        padding: 20px;
-    }
-    pkmn:active entry {
-        color: black;
-        text-shadow: none;
-    }
-    entry[game]::after {
-        font-style: none;
-        font-weight: bold;
-        margin: 0px 20px;
-        position: relative;
-        top: 0px;
-        left: 10%;
-    }
-    entry[game="x"]::after {
-        content: "X";
-        color: #0077be;
-    } 
-    entry[game="y"]::after {
-        content: "Y";
-        color: maroon;
-    }
-    button.moveset {
-      font-size: 24px;
-      color: white;
-      background: dodgerblue;
-      border: 6px solid dodgerblue;
-      border-radius: 12px;
-      margin: 20px 50%;
-      text-align: center;
-      font-weight: 700;
-    }
-    button.moveset a {
-      color: white;
-      text-decoration: none;
-    }
-}
-  </style>
+        pkmn {
+            display: block;
+            background: #eeeeee;
+            width: 25%;
+            margin: 20px auto;
+            height: 100px;
+            text-align: center;
+            border: blanchedalmond 5px solid;
+            border-radius: 16px;
+            filter: drop-shadow(0px 3px 6px);
+            transition: transform 80ms ease-out, filter 80ms ease-out;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        pkmn:hover {
+            transform: translate(0px, -4px);
+            filter: drop-shadow(0px 5px 6px gray);
+        }
+
+        pkmn:active {
+            transform: translate(0px, 2px);
+            filter: drop-shadow(0px 5px 6px gray);
+            background: rgba(255, 255, 0, 0.8);
+            color: white;
+        }
+
+        pkmn span {
+            font-size: 1.6rem;
+            position: relative;
+            top: 10%;
+        }
+
+        pkmn:active span,
+        pkmn span:active {
+            text-shadow: 0px 2px 8px white, 0px 3px 8px white;
+        }
+
+        pkmn[type1][type2] span {
+            position: relative;
+            top: 20%;
+        }
+
+        pkmn[type1="normal"]:active,
+        [type2="normal"]:active {
+            background: lightgray;
+        }
+
+        pkmn[type1="grass"]:active,
+        [type2="grass"]:active {
+            background: #00d13f;
+        }
+
+        pkmn[type1="fire"]:active,
+        [type2="fire"]:active {
+            background: orange;
+        }
+
+        pkmn[type1="water"]:active,
+        [type2="water"]:active {
+            background: dodgerblue;
+        }
+
+        pkmn[type1="electric"]:active,
+        [type2="electric"]:active {
+            background: gold;
+        }
+
+        pkmn[type1="ground"]:active,
+        [type2="ground"]:active {
+            background: khaki;
+        }
+
+        pkmn[type1="rock"]:active,
+        [type2="rock"]:active {
+            background: darkkhaki;
+        }
+
+        pkmn[type1="bug"]:active,
+        [type2="bug"]:active {
+            background: yellowgreen;
+        }
+
+        pkmn[type1="psychic"]:active,
+        [type2="psychic"]:active {
+            background: deeppink;
+        }
+
+        pkmn[type1="poison"]:active,
+        [type2="posion"]:active {
+            background: rebeccapurple;
+        }
+
+        pkmn[type1="ghost"]:active,
+        [type2="ghost"]:active {
+            background: #635777;
+        }
+
+        pkmn[type1="fighting"]:active,
+        [type2="fighting"]:active {
+            background: maroon;
+        }
+
+        pkmn[type1="flying"]:active,
+        [type2="flying"]:active {
+            background: lightskyblue;
+        }
+
+        pkmn[type1="ice"]:active,
+        [type2="ice"]:active {
+            background: #BCE6E6;
+        }
+
+        pkmn[type1="dragon"]:active,
+        [type2="dragon"]:active {
+            background: #6F35FC;
+        }
+
+        pkmn[type1="steel"]:active,
+        [type2="steel"]:active {
+            background: silver;
+        }
+
+        pkmn[type1="dark"]:active,
+        [type2="dark"]:active {
+            background: #211a26;
+        }
+
+        pkmn[type1="fairy"]:active,
+        [type2="fairy"]:active {
+            background: #f2ada6;
+        }
+
+        pkmn[type1]::before {
+            display: block;
+            position: relative;
+            top: 5%;
+            left: 58%;
+            width: 35%;
+            min-width: 35%;
+            max-width: 35%;
+            text-align: center;
+            border-radius: 5px;
+            padding: 4px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        pkmn[type2]::after {
+            display: block;
+            position: relative;
+            top: -27%;
+            left: 58%;
+            width: 35%;
+            min-width: 35%;
+            max-width: 35%;
+            text-align: center;
+            border-radius: 5px;
+            padding: 4px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        pkmn[type1][type2]::before {
+            position: relative;
+            top: 0% !important;
+            left: 58% !important;
+        }
+
+        pkmn[type2] span {
+            top: 30%;
+        }
+
+        pkmn[type1]:active::before,
+        [type2]:active::after {
+            background: white;
+            color: black;
+            text-shadow: 0px 2px 8px black, 0px 3px 8px black;
+        }
+
+        pkmn[type1="normal"]::before,
+        [type2="normal"]::after {
+            background: lightgray;
+            content: "NORMAL";
+            border: 1px solid lightgray;
+        }
+
+        pkmn[type1="grass"]::before,
+        [type2="grass"]::after {
+            background: #00d13f;
+            content: "GRASS";
+            border: 1px solid #00d13f;
+        }
+
+        pkmn[type1="fire"]::before,
+        [type2="fire"]::after {
+            background: orange;
+            content: "FIRE";
+            border: 1px solid orange;
+        }
+
+        pkmn[type1="water"]::before,
+        [type2="water"]::after {
+            background: dodgerblue;
+            content: "WATER";
+            border: 1px solid dodgerblue;
+        }
+
+        pkmn[type1="electric"]::before,
+        [type2="electric"]::after {
+            background: gold;
+            content: "ELECTRIC";
+            border: 1px solid gold;
+        }
+
+        pkmn[type1="ground"]::before,
+        [type2="ground"]::after {
+            background: khaki;
+            content: "GROUND";
+            border: 1px solid khaki;
+        }
+
+        pkmn[type1="rock"]::before,
+        [type2="rock"]::after {
+            background: darkkhaki;
+            content: "ROCK";
+            border: 1px solid darkkhaki;
+        }
+
+        pkmn[type1="bug"]::before,
+        [type2="bug"]::after {
+            background: yellowgreen;
+            content: "BUG";
+            border: 1px solid yellowgreen;
+        }
+
+        pkmn[type1="psychic"]::before,
+        [type2="psychic"]::after {
+            background: deeppink;
+            content: "PSYCHIC";
+            border: 1px solid deeppink;
+        }
+
+        pkmn[type1="poison"]::before,
+        [type2="poison"]::after {
+            background: rebeccapurple;
+            content: "POISON";
+            border: 1px solid rebeccapurple;
+        }
+
+        pkmn[type1="ghost"]::before,
+        [type2="ghost"]::after {
+            background: #635777;
+            content: "GHOST";
+            border: 1px solid #635777;
+        }
+
+        pkmn[type1="fighting"]::before,
+        [type2="fighting"]::after {
+            background: maroon;
+            content: "FIGHTING";
+            border: 1px solid maroon;
+        }
+
+        pkmn[type1="flying"]::before,
+        [type2="flying"]::after {
+            background: lightskyblue;
+            content: "FLYING";
+            border: 1px solid lightskyblue;
+        }
+
+        pkmn[type1="ice"]::before,
+        [type2="ice"]::after {
+            background: #BCE6E6;
+            content: "ICE";
+            border: 1px solid #BCE6E6;
+        }
+
+        pkmn[type1="dragon"]::before,
+        [type2="dragon"]::after {
+            background: #6f53fc;
+            content: "DRAGON";
+            border: 1px solid #6f53fc;
+        }
+
+        pkmn[type1="steel"]::before,
+        [type2="steel"]::after {
+            background: silver;
+            content: "STEEL";
+            border: 1px solid silver;
+        }
+
+        pkmn[type1="dark"]::before,
+        [type2="dark"]::after {
+            background: #211a26;
+            content: "DARK";
+            border: 1px solid #211a26;
+        }
+
+        pkmn[type1="fairy"]::before,
+        [type2="fairy"]::after {
+            background: #f2ada6;
+            content: "FAIRY";
+            border: 1px solid #f2ada6;
+        }
+
+        pkmn:has(img),
+        pkmn:has(h1) {
+            width: 80%;
+            height: 40%;
+        }
+
+        pkmn img {
+            width: 120px;
+            position: relative;
+            top: -75px;
+            left: -43.125%;
+        }
+
+        pkmn img:nth-child(2) {
+            top: -25px;
+            left: -51%;
+        }
+
+        pkmn h1 {
+            position: relative;
+            top: -140px;
+            left: -100px;
+        }
+
+        pkmn:active h1 {
+            text-shadow: 0px 2px 8px white, 0px 3px 8px white;
+        }
+
+        pkmn:has(img)[type1]::before {
+            top: 100px;
+        }
+
+        pkmn:has(img)[type1]:not([type2])::before {
+            top: 20px;
+        }
+
+        pkmn:has(img)[type2]::after {
+            top: -280px !important;
+        }
+
+        pkmn:has(img) sub {
+            display: block;
+            position: relative;
+            top: -160px;
+            left: -100px;
+            font-style: italic;
+        }
+
+        pkmn entry {
+            display: block;
+            background: white;
+            width: 80%;
+            border: solid 1px blanchedalmond;
+            border-radius: 6px;
+            padding: 20px;
+            filter: drop-shadow(0px 3px 6px);
+            margin: 10px auto;
+        }
+
+        pkmn:active entry {
+            color: black;
+            text-shadow: none;
+        }
+
+        entry[game]::after {
+            font-style: none;
+            font-weight: bold;
+            margin: 0px 20px;
+            position: relative;
+            top: 0px;
+            left: 10%;
+        }
+
+        entry[game="x"]::after {
+            content: "X";
+            color: #0077be;
+        }
+
+        entry[game="y"]::after {
+            content: "Y";
+            color: maroon;
+        }
+
+        button.moveset {
+            font-size: 24px;
+            color: white;
+            background: dodgerblue;
+            border: 6px solid dodgerblue;
+            border-radius: 12px;
+            margin: 20px 50%;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        button.moveset a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        @media screen and (orientation: portrait) {
+            pkmn {
+                width: 50%;
+                margin: 20px auto;
+                height: 200px;
+            }
+            pkmn span {
+                font-size: 4rem;
+                top: 10%;
+            }
+            pkmn[type1][type2] span {
+                top: 20%;
+            }
+            pkmn[type1]::before {
+                top: 5%;
+                left: 58%;
+                width: 35%;
+                min-width: 35%;
+                max-width: 35%;
+                padding: 4px;
+                font-size: 2.5rem;
+            }
+            pkmn[type2]::after {
+                top: -27%;
+                left: 58%;
+                width: 35%;
+                min-width: 35%;
+                max-width: 35%;
+                padding: 4px;
+                font-size: 2.5rem;
+            }
+            pkmn[type1][type2]::before {
+                position: relative;
+                top: 0% !important;
+                left: 58% !important;
+            }
+            pkmn[type2] span {
+                top: 30%;
+            }
+            pkmn:has(img),
+            pkmn:has(h1) {
+                width: 80%;
+                height: 80%;
+            }
+            pkmn img {
+                width: 300px;
+                position: relative;
+                top: -75px;
+                left: -30%;
+            }
+            pkmn img:nth-child(2) {
+                top: -25px;
+                left: -30%;
+            }
+            pkmn h1 {
+                position: relative;
+                top: -140px;
+                left: -100px;
+            }
+            pkmn:has(img)[type1]::before {
+                top: 100px;
+            }
+            pkmn:has(img)[type1]:not([type2])::before {
+                top: 20px;
+            }
+            pkmn:has(img)[type2]::after {
+                top: -290px !important;
+            }
+
+            pkmn:has(img) sub {
+                display: block;
+                position: relative;
+                top: -160px;
+                left: -100px;
+                font-style: italic;
+            }
+            pkmn entry {
+                width: 80%;
+                padding: 20px;
+            }
+            pkmn:active entry {
+                color: black;
+                text-shadow: none;
+            }
+            entry[game]::after {
+                font-style: none;
+                font-weight: bold;
+                margin: 0px 20px;
+                position: relative;
+                top: 0px;
+                left: 10%;
+            }
+            entry[game="x"]::after {
+                content: "X";
+                color: #0077be;
+            }
+            entry[game="y"]::after {
+                content: "Y";
+                color: maroon;
+            }
+            button.moveset {
+                font-size: 24px;
+                color: white;
+                background: dodgerblue;
+                border: 6px solid dodgerblue;
+                border-radius: 12px;
+                margin: 20px 50%;
+                text-align: center;
+                font-weight: 700;
+            }
+            button.moveset a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        @media screen and (max-width: 1366px) {
+            pkmn entry {
+                position: relative;
+                top: -100px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <pkmn type1="normal"><span>Tackle</span></pkmn>
-  <pkmn type1="grass"><span>Vine Whip</span></pkmn>
-  <pkmn type1="fire"><span>Flare Blitz</span></pkmn>
-  <pkmn type1="water"><span>Hydro Pump</span></pkmn>
-  <pkmn type1="electric"><span>Volt Tackle</span></pkmn>
-  <pkmn type1="ground"><span>Earthquake</span></pkmn>
-  <pkmn type1="rock"><span>Ancient Power</span></pkmn>
-  <pkmn type1="bug"><span>Infestation</span></pkmn>
-  <pkmn type1="psychic"><span>Extrasensory</span></pkmn>
-  <pkmn type1="poison"><span>Toxic</span></pkmn>
-  <pkmn type1="ghost"><span>Shadow Ball</span></pkmn>
-  <pkmn type1="fighting"><span>Brick Break</span></pkmn>
-  <pkmn type1="flying"><span>Aerial Ace</span></pkmn>
-  <pkmn type1="ice"><span>Sheer Cold</span></pkmn>
-  <pkmn type1="dragon"><span>Draco Meteor</span></pkmn>
-  <pkmn type1="steel"><span>Gyro Ball</span></pkmn>
-  <pkmn type1="dark"><span>Dark Pulse</span></pkmn>
-  <pkmn type1="fairy"><span>Dazzling Gleam</span></pkmn>
-  <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/bulbasaur.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/bulbasaur.png"><h1>#0001 - Bulbasaur</h1><sub>The Seed Pokemon</sub><entry>"A seed sits on Bulbasaur's back from birth. They will grow in equal proportion."</entry></pkmn>
-  <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0001">Preview</a></button>
-  <pkmn type1="fire"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/charmander.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/charmander.png"><h1>#0004 - Charmander</h1><sub>The Lizard Pokemon</sub><entry>"The flame on a Charmander's tail is a very 
-reliable glimpse into its health. A healthy Charmander boasts a bright flame. The flame going out is fatal."</entry></pkmn>
+    <pkmn type1="normal"><span>Tackle</span></pkmn>
+    <pkmn type1="grass"><span>Vine Whip</span></pkmn>
+    <pkmn type1="fire"><span>Flare Blitz</span></pkmn>
+    <pkmn type1="water"><span>Hydro Pump</span></pkmn>
+    <pkmn type1="electric"><span>Volt Tackle</span></pkmn>
+    <pkmn type1="ground"><span>Earthquake</span></pkmn>
+    <pkmn type1="rock"><span>Ancient Power</span></pkmn>
+    <pkmn type1="bug"><span>Infestation</span></pkmn>
+    <pkmn type1="psychic"><span>Extrasensory</span></pkmn>
+    <pkmn type1="poison"><span>Toxic</span></pkmn>
+    <pkmn type1="ghost"><span>Shadow Ball</span></pkmn>
+    <pkmn type1="fighting"><span>Brick Break</span></pkmn>
+    <pkmn type1="flying"><span>Aerial Ace</span></pkmn>
+    <pkmn type1="ice"><span>Sheer Cold</span></pkmn>
+    <pkmn type1="dragon"><span>Draco Meteor</span></pkmn>
+    <pkmn type1="steel"><span>Gyro Ball</span></pkmn>
+    <pkmn type1="dark"><span>Dark Pulse</span></pkmn>
+    <pkmn type1="fairy"><span>Dazzling Gleam</span></pkmn>
+    <pkmn type1="grass" type2="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/bulbasaur.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/bulbasaur.png">
+        <h1>#0001 - Bulbasaur</h1><sub>The Seed Pokemon</sub>
+        <entry>"A seed sits on Bulbasaur's back from birth. The seed grows and blooms in proportion to Bulbasaur's growth."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0001">Preview</a></button>
+    <pkmn type1="fire"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/charmander.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/charmander.png">
+        <h1>#0004 - Charmander</h1><sub>The Lizard Pokemon</sub>
+        <entry>"The flame on a Charmander's tail is a very reliable glimpse into its health. A healthy Charmander boasts a bright flame."</entry>
+    </pkmn>
     <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0004">Preview</a></button>
-    <pkmn type1="water"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/squirtle.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/squirtle.png"><h1>#0007 - Squirtle</h1><sub>The Turtle Pokemon</sub><entry>"Squirtle will recede into its' shell, then fire off unrelenting spouts of water when given the opportunity."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0007">Preview</a></button>
-              <pkmn type1="electric"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/pikachu.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/pikachu.png"><h1>#0025 - Pikachu</h1><sub>The Electric Mouse Pokemon</sub><entry>"Pikachu's cheek pouches generate large amounts of electricity."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0025">Preview</a></button>
-    <pkmn type1="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/nidoran-m.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/nidoran-m.png"><h1>#0032 - Nidoran♂</h1><sub>The Poison Pin Pokemon</sub><entry>"A male Nidoran's current stature and overall strength are irrelevant when unsuspecting predators meet the toxic horn protruding from its' forehead."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0032">Preview</a></button>
-            <pkmn type1="normal"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/eevee.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/eevee.png"><h1>#0133 - Eevee</h1><sub>The Evolution Pokemon</sub><entry>"As far as we are aware, Eevee has 8 distinct possible evolutions, with a wide variety of methods used to achieve them."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0133">Preview</a></button>
-      <pkmn type1="psychic"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/mewtwo.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/mewtwo.png"><h1>#0151 - Mewtwo</h1><sub>The Genetic Pokemon</sub><entry>"This Pokemon is a failed and aggressive reconstruction of Mew, the scientific enigma that birthed all Pokemon."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0151">Preview</a></button>
-      <pkmn type1="bug" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/ledian.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/ledian.png"><h1>#0166 - Ledian</h1><sub>The Ladybug Pokemon</sub><entry>"This Pokemon is a failed and aggressive reconstruction of Mew, the scientific enigma that birthed all Pokemon."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0166">Preview</a></button>
-            <pkmn type1="bug" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/ledian.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/ledian.png"><h1>#0166 - Ledian</h1><sub>The Ladybug Pokemon</sub><entry>"This Pokemon is a failed and aggressive reconstruction of Mew, the scientific enigma that birthed all Pokemon."</entry></pkmn>
-      <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0166">Preview</a></button>
-</body></html>
+    <pkmn type1="water"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/squirtle.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/squirtle.png">
+        <h1>#0007 - Squirtle</h1><sub>The Turtle Pokemon</sub>
+        <entry>"Squirtle will recede into its' shell, then fire off unrelenting spouts of water when given the opportunity."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0007">Preview</a></button>
+    <pkmn type1="electric"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/pikachu.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/pikachu.png">
+        <h1>#0025 - Pikachu</h1><sub>The Mouse Pokemon</sub>
+        <entry>"It raises its tail in the air to check its surroundings, It ends up functioning more fittingly as a lightning rod."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0025">Preview</a></button>
+    <pkmn type1="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/nidoran-m.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/nidoran-m.png">
+        <h1>#0032 - Nidoran♂</h1><sub>The Poison Pin Pokemon</sub>
+        <entry>"A male Nidoran's current stature and overall strength are irrelevant when unsuspecting predators meet the toxic horn protruding from its' forehead."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0032">Preview</a></button>
+    <pkmn type1="normal"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/eevee.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/eevee.png">
+        <h1>#0133 - Eevee</h1><sub>The Evolution Pokemon</sub>
+        <entry>"Eevee is a rather scarce Pokemon in the wild with several evolutions as means of adaptation to its environment."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0133">Preview</a></button>
+    <pkmn type1="psychic"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/mewtwo.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/mewtwo.png">
+        <h1>#0150 - Mewtwo</h1><sub>The Genetic Pokemon</sub>
+        <entry>"This Pokemon is a gruesome failed attempt by scientists to clone Mew, the scientific enigma that birthed all Pokemon."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0150">Preview</a></button>
+    <pkmn type1="bug" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/ledian.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/ledian.png">
+        <h1>#0166 - Ledian</h1><sub>The Five Star Pokemon</sub>
+        <entry>"Ledian's spots change depending on the brightness of stars."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0166">Preview</a></button>
+    <pkmn type1="dark" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/murkrow.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/murkrow.png">
+        <h1>#0198 - Murkrow</h1><sub>The Darkness Pokemon</sub>
+        <entry>"Murkrow likes finding and stashing away objects that catch its eye. Murkrow and Meowth will loot one another's stashes frequently."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0198">Preview</a></button>
+    <pkmn type1="bug" type2="rock"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/shuckle.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/shuckle.png">
+        <h1>#0213 - Shuckle</h1><sub>The Mold Pokemon</sub>
+        <entry>"Shuckle stores berries in its largely hollow shell, which over time become a pulpy juice."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0213">Preview</a></button>
+    <pkmn type1="ground"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/phanpy.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/phanpy.png">
+        <h1>#0231 - Phanpy</h1><sub>The Long Nose Pokemon</sub>
+        <entry>"Phanpy bumps people with its snout, and while it is intended as a sign of affection, it ends up sending people flying."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0231">Preview</a></button>
+    <pkmn type1="psychic" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/lugia.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/lugia.png">
+        <h1>#0249 - Lugia</h1><sub>The Diving Pokemon</sub>
+        <entry>"It lays dormant at the bottom of a deep-sea trench. A full-force flap of its wings calls a 40-day storm to the vicinity."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0249">Preview</a></button>
+    <pkmn type1="steel" type2="rock"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/lairon.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/lairon.png">
+        <h1>#0305 - Lairon</h1><sub>The Iron Armor Pokemon</sub>
+        <entry>"Groups of Lairon will commonly go to blows over who gets claim to iron ore deposits."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0305">Preview</a></button>
+    <pkmn type1="poison"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/gulpin.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/gulpin.png">
+        <h1>#0316 - Gulpin</h1><sub>The Stomach Pokemon</sub>
+        <entry>"Gulpin's heart and brain are incredibly small, in order to maximize room for its stomach, which containes enzymes capable of dissolving anything."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0316">Preview</a></button>
+    <pkmn type1="ice"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/glalie.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/glalie.png">
+        <h1>#0362 - Glalie</h1><sub>The Face Pokemon</sub>
+        <entry>"It actively freezes moisture in the air and clads itself in the resulting icy shell to defend its weak body."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0362">Preview</a></button>
+    <pkmn type1="dragon" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/salamence.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/salamence.png">
+        <h1>#0373 - Salamence</h1><sub>The Dragon Pokemon</sub>
+        <entry>"Once angered it completely loses control of its faculties. From that point on, destruction ensues."</entry>
+    </pkmn>
+    <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0373">Preview</a></button>
+</body>
+
+</html>
