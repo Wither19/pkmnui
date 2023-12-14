@@ -1,4 +1,6 @@
-<html><head>
+<!DOCTYPE HTML>
+<html>
+  <head>
   <title>Pokemon UI Mockup</title>
   <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -336,7 +338,7 @@
       min-width: 35%;
       max-width: 35%;
       padding: 4px;
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
     pkmn[type2]::after {
       top: -27%;
@@ -357,23 +359,22 @@
     }
     pkmn:has(img), pkmn:has(h1) {
       width: 80%;
-      height: 50%;
+      height: 80%;
     }
     pkmn img {
       width: 300px;
       position: relative;
-      top: -198px;
-      left: -22%;
+      top: -75px;
+      left: -30%;
     }
     pkmn img:nth-child(2) {
-      top: -50px;
-      left: -57%;
+      top: -25px;
+      left: -30%;
     }
     pkmn h1 {
       position: relative;
-      top: -340px;
+      top: -140px;
       left: -100px;
-      font-size: 3rem;
     }
     pkmn:has(img)[type1]::before {
       top: 100px;
@@ -388,18 +389,13 @@
     pkmn:has(img) sub {
         display: block;
         position: relative;
-        top: -380px;
+        top: -160px;
         left: -100px;
-        font-size: 2rem;
         font-style: italic;
     }
     pkmn entry {
         width: 80%;
-        font-size: 3rem;
-        padding: 12px 40px;
-        position: relative;
-        height: 560px;
-        top: -200px;
+        padding: 20px;
     }
     pkmn:active entry {
         color: black;
@@ -422,7 +418,7 @@
         color: maroon;
     }
     button.moveset {
-      font-size: 4rem;
+      font-size: 24px;
       color: white;
       background: dodgerblue;
       border: 6px solid dodgerblue;
@@ -476,4 +472,6 @@ reliable glimpse into its health. A healthy Charmander boasts a bright flame. Th
       <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0166">Preview</a></button>
             <pkmn type1="bug" type2="flying"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/regular/ledian.png"><img src="https://raw.githubusercontent.com/Wither19/pokesprite/master/pokemon-gen7x/shiny/ledian.png"><h1>#0166 - Ledian</h1><sub>The Ladybug Pokemon</sub><entry>"This Pokemon is a failed and aggressive reconstruction of Mew, the scientific enigma that birthed all Pokemon."</entry></pkmn>
       <button class="moveset"><a target="_blank" href="https://wither19.github.io/pkmnui/0166">Preview</a></button>
-</body></html>
+
+</body>
+</html>
