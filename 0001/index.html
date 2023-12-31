@@ -1,369 +1,316 @@
-<html><head>
-  <title>Pokemon UI Mockup</title>
-  <link rel="stylesheet" href="https://wither19.github.io/pkmnui/pkmn.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script><style type="text/css" id="operaUserStyle">
-  video {
-    filter: -opera-shader(url(data:text/plain;base64,Ly8gaHR0cHM6Ly9naXRodWIuY29tL0dQVU9wZW4tRWZmZWN0cy9GaWRlbGl0eUZYLUNBUwovLyB2MwoKdW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwp1bmlmb3JtIGZsb2F0MiBpTW91c2U7CnVuaWZvcm0gZmxvYXQgaUFyZ3NbMV07Cgpjb25zdCBmbG9hdCBFUFNJT04gPSAwLjE7CmNvbnN0IGZsb2F0IFZfTUlOID0gMDsKY29uc3QgZmxvYXQgVl9MT1cgPSAwLjI1Owpjb25zdCBmbG9hdCBWX01FRCA9IDAuNTsKY29uc3QgZmxvYXQgVl9ISUdIID0gMC43NTsKY29uc3QgZmxvYXQgVl9NQVggPSAxOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmZsb2F0MyBwaXhlbChpbnQgeCwgaW50IHksIGZsb2F0MiB4eSkgewogICAgcmV0dXJuIGlDaHVuay5ldmFsKHh5ICsgZmxvYXQyKHgsIHkpKS5yZ2I7Cn0KCmZsb2F0MyBzaGFycGVuKGZsb2F0MiB4eSkgewogICAgZmxvYXQzIGYgPQogICAgICAgIHBpeGVsKC0xLCAtMSwgeHkpICogIDEgKwogICAgICAgIHBpeGVsKCAwLCAtMSwgeHkpICogLTEgKwogICAgICAgIHBpeGVsKCAxLCAtMSwgeHkpICogIDEgKwoKICAgICAgICBwaXhlbCgtMSwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMCwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMSwgMCwgeHkpICogLTEgICsKCiAgICAgICAgcGl4ZWwoLTEsIDEsIHh5KSAqIDEgICArCiAgICAgICAgcGl4ZWwoIDAsIDEsIHh5KSAqIC0xICArCiAgICAgICAgcGl4ZWwoIDEsIDEsIHh5KSAqIDE7CiAgICByZXR1cm4gZiAvIC0xOwp9CgpmbG9hdDQgUkdYMihmbG9hdDIgeHkpIHsKICAgIGZsb2F0NCBjb2xvciA9IGlDaHVuay5ldmFsKHh5KTsKCiAgICBpZiAoaUNodW5rU2l6ZS54ICogaUNodW5rU2l6ZS55IDwgTUlOX0FSRUEpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKGlDaHVua1NpemUueSA8IE1JTl9TVFJJUCB8fCBpQ2h1bmtTaXplLnggPCBNSU5fU1RSSVApIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKHh5LnggPCBNQVJHSU4gfHwgeHkueCA+IChpQ2h1bmtTaXplLnggLSBNQVJHSU4pIHx8CiAgICAgICAgeHkueSA8IE1BUkdJTiB8fCB4eS55ID4gKGlDaHVua1NpemUueSAtIE1BUkdJTikpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgcmV0dXJuIGZsb2F0NChzaGFycGVuKHh5KSwgMSk7Cn0KCmZsb2F0IG1pbjMoZmxvYXQgeCwgZmxvYXQgeSwgZmxvYXQgeikgewogICAgcmV0dXJuIG1pbih4LCBtaW4oeSwgeikpOwp9CgpmbG9hdCBtYXgzKGZsb2F0IHgsIGZsb2F0IHksIGZsb2F0IHopIHsKICAgIHJldHVybiBtYXgoeCwgbWF4KHksIHopKTsKfQoKZmxvYXQgcmNwKGZsb2F0IHYpIHsKICAgIHJldHVybiAxIC8gdjsKfQoKZmxvYXQzIFJHWDMoZmxvYXQyIHh5LCBmbG9hdCBzdHJlbmd0aCkgewogICAgZmxvYXQzIGEgPSBwaXhlbCgtMSwgLTEsIHh5KTsKICAgIGZsb2F0MyBiID0gcGl4ZWwoIDAsIC0xLCB4eSk7CiAgICBmbG9hdDMgYyA9IHBpeGVsKCAxLCAtMSwgeHkpOwoKICAgIGZsb2F0MyBkID0gcGl4ZWwoLTEsIDAsIHh5KTsKICAgIGZsb2F0MyBlID0gcGl4ZWwoIDAsIDAsIHh5KTsKICAgIGZsb2F0MyBmID0gcGl4ZWwoIDEsIDAsIHh5KTsKCiAgICBmbG9hdDMgZyA9IHBpeGVsKC0xLCAxLCB4eSk7CiAgICBmbG9hdDMgaCA9IHBpeGVsKCAwLCAxLCB4eSk7CiAgICBmbG9hdDMgaSA9IHBpeGVsKCAxLCAxLCB4eSk7CgogICAgZmxvYXQgbW5SID0gbWluMyhtaW4zKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBtbkcgPSBtaW4zKG1pbjMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG1uQiA9IG1pbjMobWluMyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG1uUjIgPSBtaW4zKG1pbjMobW5SLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG1uRzIgPSBtaW4zKG1pbjMobW5HLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG1uQjIgPSBtaW4zKG1pbjMobW5CLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBtblIgPSBtblIgKyBtblIyOwogICAgbW5HID0gbW5HICsgbW5HMjsKICAgIG1uQiA9IG1uQiArIG1uQjI7CgogICAgZmxvYXQgbXhSID0gbWF4MyhtYXgzKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBteEcgPSBtYXgzKG1heDMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG14QiA9IG1heDMobWF4MyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG14UjIgPSBtYXgzKG1heDMobXhSLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG14RzIgPSBtYXgzKG1heDMobXhHLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG14QjIgPSBtYXgzKG1heDMobXhCLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBteFIgPSBteFIgKyBteFIyOwogICAgbXhHID0gbXhHICsgbXhHMjsKICAgIG14QiA9IG14QiArIG14QjI7CgogICAgZmxvYXQgcmNwTVIgPSByY3AobXhSKTsKICAgIGZsb2F0IHJjcE1HID0gcmNwKG14Ryk7CiAgICBmbG9hdCByY3BNQiA9IHJjcChteEIpOwoKICAgIGZsb2F0IGFtcFIgPSBzYXR1cmF0ZShtaW4obW5SLCAyIC0gbXhSKSAqIHJjcE1SKTsKICAgIGZsb2F0IGFtcEcgPSBzYXR1cmF0ZShtaW4obW5HLCAyIC0gbXhHKSAqIHJjcE1HKTsKICAgIGZsb2F0IGFtcEIgPSBzYXR1cmF0ZShtaW4obW5CLCAyIC0gbXhCKSAqIHJjcE1CKTsKCiAgICBhbXBSID0gc3FydChhbXBSKTsKICAgIGFtcEcgPSBzcXJ0KGFtcEcpOwogICAgYW1wQiA9IHNxcnQoYW1wQik7CgogICAgZmxvYXQgcGVhayA9IC1yY3AobWl4KDgsIDUsIHN0cmVuZ3RoKSk7CgogICAgZmxvYXQgd1IgPSBhbXBSICogcGVhazsKICAgIGZsb2F0IHdHID0gYW1wRyAqIHBlYWs7CiAgICBmbG9hdCB3QiA9IGFtcEIgKiBwZWFrOwoKICAgIGZsb2F0IHJjcFdlaWdodFIgPSByY3AoMSArIDQgKiB3Uik7CiAgICBmbG9hdCByY3BXZWlnaHRHID0gcmNwKDEgKyA0ICogd0cpOwogICAgZmxvYXQgcmNwV2VpZ2h0QiA9IHJjcCgxICsgNCAqIHdCKTsKCiAgICByZXR1cm4gZmxvYXQzKAogICAgICAgIHNhdHVyYXRlKChiLnIgKiB3UiArIGQuciAqIHdSICsgZi5yICogd1IgKyBoLnIgKiB3UiArIGUucikgKiByY3BXZWlnaHRSKSwKICAgICAgICBzYXR1cmF0ZSgoYi5nICogd0cgKyBkLmcgKiB3RyArIGYuZyAqIHdHICsgaC5nICogd0cgKyBlLmcpICogcmNwV2VpZ2h0RyksCiAgICAgICAgc2F0dXJhdGUoKGIuYiAqIHdCICsgZC5iICogd0IgKyBmLmIgKiB3QiArIGguYiAqIHdCICsgZS5iKSAqIHJjcFdlaWdodEIpKTsKfQoKCmZsb2F0NCBtYWluKGZsb2F0MiB4eSkgewoKICAgIGZsb2F0NCBvcmlnaW5hbENvbG9yID0gaUNodW5rLmV2YWwoeHkpOwogICAgaWYgKG9yaWdpbmFsQ29sb3IuYSA8IDEpIHsKICAgICAgICByZXR1cm4gaUNodW5rLmV2YWwoeHkpOwogICAgfQoKICAgIGZsb2F0IGludGVuc2l0eSA9IGlBcmdzWzBdOwogICAgZmxvYXQgc3RyZW5ndGggPSAwOwogICAgZmxvYXQzIGNvbG9yOwoKICAgIGlmIChpbnRlbnNpdHkgPCBWX01JTiArIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMC4xMDsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfTE9XIC0gRVBTSU9OICYmIGludGVuc2l0eSA8IFZfTE9XICsgRVBTSU9OKSB7CiAgICAgICAgc3RyZW5ndGggPSAwLjMzOwogICAgICAgIGNvbG9yID0gUkdYMyh4eSwgc3RyZW5ndGgpOwoKICAgIH0gZWxzZSBpZiAoaW50ZW5zaXR5ID4gVl9NRUQgLSBFUFNJT04gJiYgaW50ZW5zaXR5IDwgVl9NRUQgKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuNTsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfSElHSCAtIEVQU0lPTiAmJiBpbnRlbnNpdHkgPCBWX0hJR0ggKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuOTk7CiAgICAgICAgY29sb3IgPSBSR1gzKHh5LCBzdHJlbmd0aCk7CgogICAgfSBlbHNlIGlmIChpbnRlbnNpdHkgPiBWX01BWCAtIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMTsKICAgICAgICBjb2xvciA9IFJHWDIoeHkpLnJnYjsKICAgIH0KCiAgICByZXR1cm4gZmxvYXQ0KGNvbG9yLCBvcmlnaW5hbENvbG9yLmEpOwp9) -opera-args(0.25 calc(env(-opera-gx-accent-color-r)/255) calc(env(-opera-gx-accent-color-g)/255) calc(env(-opera-gx-accent-color-b)/255)));
-  }
-</style>
-  <style>
-    body * {
-      font-family: 'Afacad', sans-serif;
-    }
-    pkmn {
-      display: block;
-      background: #eeeeee;
-      width: 25%;
-      margin: 20px auto;
-      height: 100px;
-      text-align: center;
-      border: blanchedalmond 5px solid;
-      border-radius: 16px;
-      filter: drop-shadow(0px 3px 6px);
-      transition: transform 80ms ease-out, filter 80ms ease-out;
-      user-select: none;
-      cursor: pointer;
-    }
-    pkmn:hover {
-      transform: translate(0px, -4px);
-      filter: drop-shadow(0px 5px 6px gray);
-    }
-    pkmn:active {
-      transform: translate(0px, 2px);
-      filter: drop-shadow(0px 5px 6px gray);
-      background: rgba(255, 255, 0, 0.8);
-      color: white;
-    }
-    pkmn span {
-      font-size: 1.6rem;
-      position: relative;
-      top: 10%;
-    }
-    pkmn:active span, pkmn span:active {
-      text-shadow: 0px 2px 8px white;
-    }
-    pkmn[type1][type2] span {
-      position: relative;
-      top: 20%;
-    }
-    pkmn[type1="normal"]:active, [type2="normal"]:active {
-      background: lightgray;
-    }
-    pkmn[type1="grass"]:active, [type2="grass"]:active {
-      background: #00d13f;
-    }
-    pkmn[type1="fire"]:active, [type2="fire"]:active {
-      background: orange;
-    }
-    pkmn[type1="water"]:active, [type2="water"]:active {
-      background: dodgerblue;
-    }
-    pkmn[type1="electric"]:active, [type2="electric"]:active {
-      background: gold;
-    }
-    pkmn[type1="ground"]:active, [type2="ground"]:active {
-      background: khaki;
-    }
-    pkmn[type1="rock"]:active, [type2="rock"]:active {
-      background: darkkhaki;
-    }
-    pkmn[type1="bug"]:active, [type2="bug"]:active {
-      background: yellowgreen;
-    }
-    pkmn[type1="psychic"]:active, [type2="psychic"]:active {
-      background: deeppink;
-    }
-    pkmn[type1="poison"]:active, [type2="posion"]:active {
-      background: rebeccapurple;
-    }
-    pkmn[type1="ghost"]:active, [type2="ghost"]:active {
-      background: #635777;
-    }
-    pkmn[type1="fighting"]:active, [type2="fighting"]:active, [type2="fighting"]:active {
-      background: maroon;
-    }
-    pkmn[type1="flying"]:active, [type2="flying"]:active, pkmn[type2="flying"]:active {
-      background: lightskyblue;
-    }
-    pkmn[type1="ice"]:active, [type2="ice"]:active {
-      background: #BCE6E6;
-    }
-    pkmn[type1="dragon"]:active, [type2="dragon"]:active {
-      background: #6F35FC;
-    }
-    pkmn[type1="steel"]:active, [type2="steel"]:active {
-      background: silver;
-    }
-    pkmn[type1="dark"]:active, [type2="dark"]:active {
-      background: #211a26;
-    }
-    pkmn[type1="fairy"]:active, [type2="fairy"]:active {
-      background: #f2ada6;
-    }
-    pkmn[type1]::before {
-      display: block;
-      position: relative;
-      top: 5%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;
-      text-align: center;
-      border-radius: 5px;
-      padding: 4px;
-      font-size: 1rem;
-      color: white;
-    }
-    pkmn[type2]::after {
-      display: block;
-      position: relative;
-      top: -27%;
-      left: 58%;
-      width: 35%;
-      min-width: 35%;
-      max-width: 35%;      
-      text-align: center;
-      border-radius: 5px;
-      padding: 4px;
-      font-size: 1rem;
-      color: white;
-    }
-    pkmn[type1][type2]::before {
-      position: relative;
-      top: 0% !important;
-      left: 58% !important;
-    }
-    pkmn[type2] span {
-        top: 30%;
-    }
-    pkmn[type1]:active::before, [type2]:active::after {
-      background: white;
-      color: black;
-      text-shadow: 0px 2px 8px black;
-    }
-    pkmn[type1="normal"]::before, [type2="normal"]::after {
-      background: lightgray;
-      content: "NORMAL";
-      border: 1px solid lightgray;
-    }
-    pkmn[type1="grass"]::before, [type2="grass"]::after {
-      background: #00d13f;
-      content: "GRASS";
-      border: 1px solid #00d13f;
-    }
-    pkmn[type1="fire"]::before, [type2="fire"]::after {
-      background: orange;
-      content: "FIRE";
-      border: 1px solid orange;
-    }
-    pkmn[type1="water"]::before, [type2="water"]::after {
-      background: dodgerblue;
-      content: "WATER";
-      border: 1px solid dodgerblue;
-    }
-    pkmn[type1="electric"]::before, [type2="electric"]::after {
-      background: gold;
-      content: "ELECTRIC";
-      border: 1px solid gold;
-    }
-    pkmn[type1="ground"]::before, [type2="ground"]::after {
-      background: khaki;
-      content: "GROUND";
-      border: 1px solid khaki;
-    }
-    pkmn[type1="rock"]::before, [type2="rock"]::after {
-      background: darkkhaki;
-      content: "ROCK";
-      border: 1px solid darkkhaki;
-    }
-    pkmn[type1="bug"]::before, [type2="bug"]::after {
-      background: yellowgreen;
-      content: "BUG";
-      border: 1px solid yellowgreen;
-    }
-    pkmn[type1="psychic"]::before, [type2="psychic"]::after {
-      background: deeppink;
-      content: "PSYCHIC";
-      border: 1px solid deeppink;
-    }
-    pkmn[type1="poison"]::before, [type2="poison"]::after {
-        background: rebeccapurple;
-        content: "POISON";
-        border: 1px solid rebeccapurple;
-    }
-    pkmn[type1="ghost"]::before, [type2="ghost"]::after {
-        background: #635777;
-        content: "GHOST";
-        border: 1px solid #635777;
-    }
-    pkmn[type1="fighting"]::before, [type2="fighting"]::after {
-        background: maroon;
-        content: "FIGHTING";
-        border: 1px solid maroon;
-    }
-    pkmn[type1="flying"]::before, [type2="flying"]::after {
-      background: lightskyblue;
-      content: "FLYING";
-      border: 1px solid lightskyblue;
-      filter: brightness(0.95);
-    }
-    pkmn[type1="ice"]::before, [type2="ice"]::after {
-        background: #BCE6E6;
-        content: "ICE";
-        border: 1px solid #BCE6E6;
-    }
-    pkmn[type1="dragon"]::before, [type2="dragon"]::after {
-      background: #6f53fc;
-      content: "DRAGON";
-      border: 1px solid #6f53fc;
-    }
-    pkmn[type1="steel"]::before, [type2="steel"]::after {
-      background: silver;
-      content: "STEEL";
-      border: 1px solid silver;
-    }
-    pkmn[type1="dark"]::before, [type2="dark"]::after {
-      background: #211a26;
-      content: "DARK";
-      border: 1px solid #211a26;
-    }
-    pkmn[type1="fairy"]::before, [type2="fairy"]::after {
-      background: #f2ada6;
-      content: "FAIRY";
-      border: 1px solid #f2ada6;
-    }
-    pkmn:has(img), pkmn:has(h1) {
-      width: 80%;
-      height: 80%;
-    }
-    pkmn img {
-      width: 120px;
-      position: relative;
-      top: -75px;
-      left: -40%;
-    }
-    pkmn img:nth-child(2) {
-      top: -25px;
-      left: -51%;
-    }
-    pkmn h1 {
-      position: relative;
-      top: -140px;
-      left: -100px;
-    }
-    pkmn:active h1 {
-        text-shadow: 0px 2px 8px white;
-    }
-    pkmn:has(img)[type1]::before {
-      top: 100px;
-    }
-    pkmn:has(img)[type1]:not([type2])::before {
-      top: 20px;
-    }
-    pkmn:has(img)[type2]::after {
-      top: -290px !important;
-    }
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<style>
+body {
+    font-family: Verdana;
+}
+.damage-category-block, .Type {
+    display: block;
+    height: 2em;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+    width: 4.5em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 4px 0px;
+}
 
-    pkmn:has(img) sub {
-        display: block;
-        position: relative;
-        top: -160px;
-        left: -100px;
-        font-style: italic;
-    }
-    pkmn entry {
-        display: block;
-        font-style: italic;
-        background: lightgray;
-        width: 80%;
-        border: solid 8px blanchedalmond;
-        border-radius: 6px;
-        padding: 20px;
-        filter: drop-shadow(0px 3px 6px);
-        margin: 10px auto;
-    }
-    pkmn:active entry {
-        color: black;
-        text-shadow: none;
-    }
-    entry[game]::after {
-        font-style: none;
-        font-weight: bold;
-        margin: 0px 20px;
-        position: relative;
-        top: 0px;
-        left: 10%;
-    }
-    entry[game="x"]::after {
-        content: "X";
-        color: #0077be;
-    } 
-    entry[game="y"]::after {
-        content: "Y";
-        color: maroon;
-    }
-    button.moveset {
-      font-size: 24px;
-      color: white;
-      background: dodgerblue;
-      border: 6px solid dodgerblue;
-      border-radius: 12px;
-      margin: 20px 50%;
-      text-align: center;
-      font-weight: 700;
-    }
-    button.moveset a {
-      color: white;
-      text-decoration: none;
-    }
-    .container {
+.Type {
+    color: #fff ;
+    text-decoration: none;
+}
+
+.Type.normal {
+    background: linear-gradient(#a8a878,#8a8a59);
+    border-color: #79794e;
+}
+
+.Type.fire {
+    background: linear-gradient(#f08030,#dd6610);
+    border-color: #b4530d;
+}
+
+.Type.water {
+    background: linear-gradient(#6890f0,#386ceb);
+    border-color: #1753e3;
+}
+
+.Type.electric {
+    background: linear-gradient(#f8d030,#f0c108);
+    border-color: #c19b07;
+}
+
+.Type.fairy {
+    background: linear-gradient(#F98CFF,#F540FF);
+    border-color: #c1079b;
+}
+
+.Type.grass {
+    background: linear-gradient(#78c850,#5ca935);
+    border-color: #4a892b;
+}
+
+.Type.ice {
+    background: linear-gradient(#98d8d8,#69c6c6);
+    border-color: #45b6b6;
+}
+
+.Type.fighting {
+    background: linear-gradient(#c03028,#9d2721);
+    border-color: #82211b;
+}
+
+.Type.poison {
+    background: linear-gradient(#a040a0,#803380);
+    border-color: #662966;
+}
+
+.Type.ground {
+    background: linear-gradient(#e0c068,#d4a82f);
+    border-color: #aa8623;
+}
+
+.Type.flying {
+    background: linear-gradient(#a890f0,#9180c4);
+    border-color: #7762b6;
+}
+
+.Type.psychic {
+    background: linear-gradient(#f85888,#f61c5d);
+    border-color: #d60945;
+}
+
+.Type.bug {
+    background: linear-gradient(#a8b820,#8d9a1b);
+    border-color: #616b13;
+}
+
+.Type.rock {
+    background: linear-gradient(#b8a038,#93802d);
+    border-color: #746523;
+}
+
+.Type.ghost {
+    background: linear-gradient(#705898,#554374);
+    border-color: #413359;
+}
+
+.Type.dragon {
+    background: linear-gradient(#7038f8,#4c08ef);
+    border-color: #3d07c0;
+}
+
+.Type.steel {
+    background: linear-gradient(#b8b8d0,#9797ba);
+    border-color: #7a7aa7;
+}
+
+.Type.dark {
+    background: linear-gradient(#705848,#513f34);
+    border-color: #362a23;
+}
+
+.Type.stellar {
+    background: url("https://www.smogon.com/__assets/dex/stellar-MZZL7FQV.svg");
+    background-size: cover;
+    border-color: #3f00ff
+}
+
+.Type.question {
+    background: linear-gradient(#68a090,#4e7c6f);
+    border-color: #41685d
+}
+pkmn {
+    display: block;
+    background: #eeeeee;
+    width: 35%;
+    margin: 20px auto;
+    height: 100px;
+    text-align: center;
+    border: blanchedalmond 5px solid;
+    border-radius: 16px;
+    filter: drop-shadow(0px 3px 6px gray);
+    transition: transform 80ms ease-out, filter 80ms ease-out;
+    user-select: none;
+    cursor: pointer;
+}
+pkmn:hover {
+    transform: translate(0px, -4px);
+    filter: drop-shadow(0px 5px 6px black);
+}
+
+pkmn:active {
+    transform: translate(0px, 2px);
+    filter: drop-shadow(0px 5px 6px black);
+}
+pkmn span {
+    font-size: 1.6rem;
+    position: relative;
+    top: 5%;
+}
+
+pkmn a {
+    position: relative;
+    left: 75%;
+    top: 2%;
+}
+pkmn h1 {
+    font-size: 24px;
+    position: relative;
+    top: -170px;
+    left: -3%;
+}
+pkmn sub {
+    position: relative;
+    top: -185px;
+}
+pkmn entry {
+    display: block;
+    margin: 0px 8px;
+    position: relative;
+    top: -20px;
+}
+pkmn:has(img) {
+    width: 60%;
+    height: 10%;
+}
+pkmn:has(img) a {
+    top: 10px;
+    left: 72%;
+}
+pkmn:has(img) a:nth-child(2) {
+    top: -22px;
+    left: 85%;
+}
+pkmn img {
+    width: 120px;
+    position: relative;
+    top: -110px;
+    left: -30%;
+}
+pkmn img[src*="shiny"] {
+    top: -50px;
+    left: -51%;
+}
+no {
+    display: none;
+}
+button.moveset {
+    display: block;
+    margin: 10px auto;
+}
+.container {
       display: flex;
-    }
-    .container pkmn {
+}
+.container pkmn {
       width: 40%;
-    }
-  </style>
+}
+h1 + a {
+    
+}
+#pp, #power, #acc {
+    margin: 0px auto;
+}
+#pp::before {
+    content: "PP:";
+    margin: 0px 10px 0px 20px;
+}
+#power::before {
+    content: "Power:";
+    margin: 0px 10px 0px 20px;
+}
+#acc::before {
+    content: "Accuracy:";
+    margin: 0px 10px 0px 20px;
+}
+</style>
 </head>
 <body>
-  <div class="container 1">
-  <pkmn type1="grass"><span>Vine Whip</span></pkmn>
-  <pkmn type1="grass"><span>Solar Beam</span></pkmn>
+    
+    <div class="container 1">
+  <pkmn id="one"><a class="Type grass">Grass</a><span>Vine Whip</span></pkmn>
+  <pkmn id="two"><a class="Type grass">Grass</a><span>Solar Beam</span></pkmn>
   </div>
+  
   <div class="container 2">
-    <pkmn type1="grass"><span>Sleep Powder</span></pkmn>
-  <pkmn type1="normal"><span>Tackle</span></pkmn>
+    <pkmn id="three"><a class="Type grass">Grass</a><span>Sleep Powder</span></pkmn>
+  <pkmn id="four"><a class="Type normal">Normal</a><span>Tackle</span></pkmn>
   </div>
-  <h1 style="text-align: center;"></h1>
-  <h2 style="text-align: center;"></h2>
+  
+  <h1 style="text-align: center;" id="name"></h1>
+  <h2 style="text-align: center;" id="desc"></h2>
+  
+  <div class="container details">
+  <h2 style="text-align: center;" id="pp"></h2>
+  <h2 style="text-align: center;" id="power"></h2>
+  <h2 style="text-align: center;" id="acc"></h2>
+  </div>
+  
   <script>
-    $(".1 pkmn:nth-child(1)").click(function(){
-      $("h1").html("Vine Whip");
+    $("#one").click(function(){
+      $("#name").html("Vine Whip");
     });
-    $(".1 pkmn:nth-child(2)").click(function(){
-      $("h1").html("Solar Beam");
+    $("#one").click(function(){
+      $("#desc").html("The target is struck with slender, whiplike vines.");
     });
-    $(".2 pkmn:nth-child(1)").click(function(){
-      $("h1").html("Sleep Powder");
+    $("#one").click(function(){
+       $("#pp").html("25");
     });
-    $(".2 pkmn:nth-child(2)").click(function(){
-      $("h1").html("Tackle");
-    }); 
-    $(".1 pkmn:nth-child(1)").click(function(){
-      $("h2").html("The target is struck with slender, whiplike vines to inflict damage.");
+    $("#one").click(function(){
+       $("#power").html("45");
     });
-    $(".1 pkmn:nth-child(2)").click(function(){
-      $("h2").html("The user gathers light on the first turn, then blasts a bundled beam on the next turn.");
+    $("#one").click(function(){
+       $("#acc").html("100%"); 
     });
-    $(".2 pkmn:nth-child(1)").click(function(){
-      $("h2").html("The user scatters a cloud of sleep-inducing powder that makes the target drowsy.");
+    $("#two").click(function(){
+      $("#name").html("Solar Beam");
     });
-    $(".2 pkmn:nth-child(2)").click(function(){
-      $("h2").html("A physical attack in which the user charges and slams into the target with its whole body.");
+    $("#two").click(function(){
+      $("#desc").html("The user gathers light on the first turn, then fires a concentrated beam the next turn.");
+    });
+    $("#two").click(function(){
+       $("#pp").html("10");
+    });
+    $("#two").click(function(){
+       $("#power").html("120"); 
+    });
+    $("#two").click(function(){
+       $("#acc").html("100%");
+    });
+    $("#three").click(function(){
+      $("#name").html("Sleep Powder");
+    });
+    $("#three").click(function(){
+      $("#desc").html("The user scatters a cloud of sleep-inducing powder.");
+    });
+    $("#three").click(function(){
+       $("#pp").html("15");
+    });
+    $("#three").click(function(){
+       $("#power").html("---");
+    });
+    $("#three").click(function(){
+       $("#acc").html("75%");
+    });
+    $("#four").click(function(){
+      $("#name").html("Tackle");
+    });
+    $("#four").click(function(){
+      $("#desc").html("The user lunges at the target with its whole body.");
+    });
+    $("#four").click(function(){
+       $("#pp").html("35");
+    });
+    $("#four").click(function(){
+       $("#power").html("40");
+    });
+    $("#four").click(function(){
+       $("#acc").html("100%");
     });
   </script>
-
-
-</body></html>
+</body>
+</html>
