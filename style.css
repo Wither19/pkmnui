@@ -241,5 +241,6 @@ pkmn:has(img) a:only-of-type {
 pkmn h1 img {
     position: relative;
     top: 2px !important;
-    left: -314px;
+    left: -380px;
+    width: 25px;
 }
