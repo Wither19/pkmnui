@@ -195,7 +195,8 @@ no {
 }
 button.moveset {
     display: block;
-    margin: 10px auto;
+    margin: 80px auto;
+    padding: 8px;
 }
 .container {
       display: flex;
