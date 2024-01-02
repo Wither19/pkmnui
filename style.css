@@ -218,3 +218,22 @@ button.moveset {
     content: "Accuracy:";
     margin: 0px 10px 0px 20px;
 }
+pkmn:has(a:only-of-type) h1 {
+    top: -145px; 
+}
+
+pkmn:has(a:only-of-type) sub { 
+    top: -155px; 
+}
+
+pkmn:has(a:only-of-type) img { 
+    top: -25px; 
+}
+
+pkmn:has(a:only-of-type) img:nth-child(2) {
+    top: -85px; 
+}
+
+pkmn:has(img) a:only-of-type {
+    left: 85%; 
+}
