@@ -197,3 +197,24 @@ button.moveset {
     display: block;
     margin: 10px auto;
 }
+.container {
+      display: flex;
+}
+.container pkmn {
+      width: 40%;
+}
+#pp, #power, #acc {
+    margin: 0px auto;
+}
+#pp::before {
+    content: "PP:";
+    margin: 0px 10px 0px 20px;
+}
+#power::before {
+    content: "Power:";
+    margin: 0px 10px 0px 20px;
+}
+#acc::before {
+    content: "Accuracy:";
+    margin: 0px 10px 0px 20px;
+}
