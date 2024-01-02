@@ -238,3 +238,8 @@ pkmn:has(a:only-of-type) img:nth-child(2) {
 pkmn:has(img) a:only-of-type {
     left: 85%; 
 }
+pkmn h1 img {
+    position: relative;
+    top: 2px !important;
+    left: -314px;
+}
