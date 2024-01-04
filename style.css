@@ -17,15 +17,6 @@ body {
     color: #fff ;
     text-decoration: none;
 }
-#pokemon-types span:nth-child(1) {
-    position: absolute;
-    left: 370px;
-}
-
-#pokemon-types span:nth-child(2) {
-    position: absolute;
-    left: 460px;
-}
 .Type.normal {
     background: linear-gradient(#a8a878,#8a8a59);
     border-color: #79794e;
