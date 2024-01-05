@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://wither19.github.io/pkmnui/pokeapi/scripts.js"></script>
 <title>Online HTML Editor</title>
 <head>
 </head>
 <body>
+<script>
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pokeapi.co/api/v2/pokemon/bulbasaur/",
+    "method": "GET",
+    "headers": {}
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(JSON.parse(response));
+});
+</script>
 </body>
 </html>
