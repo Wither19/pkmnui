@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://msikma.github.io/pokesprite-spritesheet/assets/pokesprite-pokemon-gen8.css">
+    <style>
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        #mons {
+            margin: 30px 0px 50px 0px;
+        }
+        .pokemon {
+            transform: scale(2);
+            transition: transform 50ms ease-out;
+        }
+        .pokemon:hover {
+            transform: scale(2.2);
+        }
+        i {
+            margin: 0px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mons">
+        
+        <i class="pokesprite pokemon slowbro"></i>
+        <i class="pokesprite pokemon nidoking"></i>
+        <i class="pokesprite pokemon exeggutor-alola"></i>
+        <i class="pokesprite pokemon marowak-alola"></i>
+        <i class="pokesprite pokemon weezing"></i>
+        <i class="pokesprite pokemon lapras"></i>
+        <i class="pokesprite pokemon eevee"></i>
+    </div>
+    <div id="mons">
+        
+        <i class="pokesprite pokemon porygon"></i>
+        <i class="pokesprite pokemon dratini"></i>
+        <i class="pokesprite pokemon mew"></i>
+        <i class="pokesprite pokemon feraligatr"></i>
+        <i class="pokesprite pokemon furret"></i>
+        <i class="pokesprite pokemon mareep"></i>
+        <i class="pokesprite pokemon wooper"></i>
+        <i class="pokesprite pokemon lanturn"></i>
+        
+    </div>
+    <div id="mons">
+        <i class="pokesprite pokemon azumarill"></i>
+        <i class="pokesprite pokemon hoppip"></i>
+        <i class="pokesprite pokemon dunsparce"></i>
+        <i class="pokesprite pokemon shuckle"></i>
+        <i class="pokesprite pokemon heracross"></i>
+        <i class="pokesprite pokemon corsola"></i>
+        <i class="pokesprite pokemon lugia"></i>
+        <i class="pokesprite pokemon sceptile"></i>
+    </div>
+    <div id="mons">
+        <i class="pokesprite pokemon lotad"></i>
+        <i class="pokesprite pokemon gardevoir"></i>
+        <i class="pokesprite pokemon flygon"></i>
+        <i class="pokesprite pokemon altaria"></i>
+        <i class="pokesprite pokemon turtwig"></i>
+        <i class="pokesprite pokemon bidoof"></i>
+        <i class="pokesprite pokemon shinx"></i>
+        <i class="pokesprite pokemon drifblim"></i>
+    </div>
+    <div id="mons">
+        <i class="pokesprite pokemon shaymin"></i>
+        <i class="pokesprite pokemon pidove"></i>
+        <i class="pokesprite pokemon zorua"></i>
+        <i class="pokesprite pokemon reuniclus"></i>
+        <i class="pokesprite pokemon vanilluxe"></i>
+        <i class="pokesprite pokemon foongus"></i>
+        <i class="pokesprite pokemon chandelure"></i>
+        <i class="pokesprite pokemon chespin"></i>
+    </div>
+    <div id="mons">
+        <i class="pokesprite pokemon scatterbug"></i>
+        <i class="pokesprite pokemon tyrantrum"></i>
+        <i class="pokesprite pokemon aurorus"></i>
+        <i class="pokesprite pokemon sylveon"></i>
+        <i class="pokesprite pokemon hawlucha"></i>
+        <i class="pokesprite pokemon dedenne"></i>
+        <i class="pokesprite pokemon decidueye"></i>
+        <i class="pokesprite pokemon litten"></i>
+    </div>
+    <div id="mons">
+        <i class="pokesprite pokemon oricorio-sensu"></i>
+        <i class="pokesprite pokemon lycanroc-dusk"></i>
+        <i class="pokesprite pokemon lurantis"></i>
+        <i class="pokesprite pokemon bewear"></i>
+        <i class="pokesprite pokemon lunala"></i>
+        <i class="pokesprite pokemon orbeetle"></i>
+        <i class="pokesprite pokemon dracovish"></i>
+        <i class="pokesprite pokemon zacian-crowned"></i>
+    </div>
+<script>
+    $("i").mouseenter(function() {
+       $(this).addClass("shiny");
+    });
+    $("i").mouseleave(function() {
+       $(this).removeClass("shiny");
+    });
+</script>
+</body>
+</html>
