@@ -14,8 +14,8 @@
             margin: 30px 0px 50px 0px;
         }
         .pokemon {
+            position: relative;
             transform: scale(2);
-            transition: transform 50ms ease-out;
         }
         .pokemon:hover {
             transform: scale(2.2);
@@ -23,13 +23,21 @@
         i {
             margin: 0px 20px;
         }
+        .slowbro-mega, .heracross-mega, .sceptile-mega, .gardevoir-mega, .altaria-mega {
+            transform: scale(2.75);
+            top: -20px;
+        }
+        .slowbro-mega:hover, .heracross-mega:hover, .sceptile-mega:hover, .gardevoir-mega:hover, .altaria-mega:hover {
+            transform: scale(3);
+            top: -20px;
+        }
     </style>
 </head>
 <body>
     <div id="mons">
         
-        <i class="pokesprite pokemon slowbro"></i>
         <i class="pokesprite pokemon nidoking"></i>
+        <i class="pokesprite pokemon slowbro"></i>
         <i class="pokesprite pokemon exeggutor-alola"></i>
         <i class="pokesprite pokemon marowak-alola"></i>
         <i class="pokesprite pokemon weezing"></i>
@@ -104,6 +112,15 @@
     });
     $("i").mouseleave(function() {
        $(this).removeClass("shiny");
+    });
+    $(document).keydown(function(e) {
+        if (e.which == 77) {
+            $("#mons:nth-child(1) i:nth-child(2)").toggleClass("slowbro slowbro-mega");
+            $("#mons:nth-child(3) i:nth-child(5)").toggleClass("heracross heracross-mega");
+            $("#mons:nth-child(3) i:nth-child(8)").toggleClass("sceptile sceptile-mega");
+            $("#mons:nth-child(4) i:nth-child(2)").toggleClass("gardevoir gardevoir-mega");
+            $("#mons:nth-child(4) i:nth-child(4)").toggleClass("altaria altaria-mega");
+        }
     });
 </script>
 </body>
